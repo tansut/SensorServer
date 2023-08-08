@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AB5DE56-DBCF-46D6-BA3C-645BA2004D24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.SetupConfiguration</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.SetupConfiguration</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ConfigureWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ConfigureWizardControl.Designer.cs">
+      <DependentUpon>ConfigureWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FinishWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FinishWizardControl.Designer.cs">
+      <DependentUpon>FinishWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IISConfigureWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IISConfigureWizardControl.Designer.cs">
+      <DependentUpon>IISConfigureWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IntroductionWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IntroductionWizardControl.Designer.cs">
+      <DependentUpon>IntroductionWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationControl.Designer.cs">
+      <DependentUpon>NavigationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProviderWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ProviderWizardControl.Designer.cs">
+      <DependentUpon>ProviderWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerConfigureWizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerConfigureWizardControl.Designer.cs">
+      <DependentUpon>ServerConfigureWizardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SqlProvider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SqlProvider.Designer.cs">
+      <DependentUpon>SqlProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\Data\EditorList.cs" />
+    <Compile Include="Core\Data\Provider.cs" />
+    <Compile Include="Core\Exception\ExceptionManager.cs" />
+    <Compile Include="Core\Exception\TechnicalException.cs" />
+    <Compile Include="Core\Exception\UserException.cs" />
+    <Compile Include="Core\Data\SetupConfig.cs" />
+    <Compile Include="Core\BaseEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\IEditor.cs" />
+    <Compile Include="Core\SetupConfigEditor\SetupConfigEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExceptionForm.Designer.cs">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ConfigurationFileHelper.cs" />
+    <Compile Include="Helpers\IISHelper.cs" />
+    <Compile Include="Helpers\MsmqHelper.cs" />
+    <Compile Include="Helpers\SensorConfigurationHelper.cs" />
+    <Compile Include="Helpers\SqlHelper.cs" />
+    <Compile Include="Helpers\ServiceHelper.cs" />
+    <Compile Include="Helpers\WindowsServiceHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ConfigureWizardControl.resx">
+      <DependentUpon>ConfigureWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FinishWizardControl.resx">
+      <DependentUpon>FinishWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IISConfigureWizardControl.resx">
+      <DependentUpon>IISConfigureWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IntroductionWizardControl.resx">
+      <DependentUpon>IntroductionWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavigationControl.resx">
+      <DependentUpon>NavigationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProviderWizardControl.resx">
+      <DependentUpon>ProviderWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerConfigureWizardControl.resx">
+      <DependentUpon>ServerConfigureWizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SqlProvider.resx">
+      <DependentUpon>SqlProvider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BasePlane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BasePlane.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8E58203-BF18-4C69-B2A8-D3F554B2B24D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Rfid</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Rfid</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Commands\AddPrintTemplateCommand.cs" />
+    <Compile Include="Commands\AddPrintTemplateResponse.cs" />
+    <Compile Include="Commands\GetStandardizedPrintTemplateCommand.cs" />
+    <Compile Include="Commands\GetStandardizedPrintTemplateResponse.cs" />
+    <Compile Include="Core\C1G2MemoryBank.cs" />
+    <Compile Include="Core\PrintTemplateField.cs" />
+    <Compile Include="Core\RfidErrorCode.cs" />
+    <Compile Include="Core\VendorField.cs" />
+    <Compile Include="Events\RfidGenericEvent.cs" />
+    <Compile Include="Core\ByteArrayValueComparisonPattern.cs" />
+    <Compile Include="Core\FilterDataSelector.cs" />
+    <Compile Include="Core\FilterExpressionTree.cs" />
+    <Compile Include="Commands\GetAllPrintTemplateNamesCommand.cs" />
+    <Compile Include="Commands\GetAllPrintTemplateNamesResponse.cs" />
+    <Compile Include="Commands\GetAllPrintTemplatesCommand.cs" />
+    <Compile Include="Commands\GetAllPrintTemplatesResponse.cs" />
+    <Compile Include="Commands\GetCurrentPrintTemplateNameCommand.cs" />
+    <Compile Include="Commands\GetCurrentPrintTemplateNameResponse.cs" />
+    <Compile Include="Commands\GetDiagnosticsCommand.cs" />
+    <Compile Include="Commands\GetDiagnosticsResponse.cs" />
+    <Compile Include="Commands\ReadTagCommand.cs" />
+    <Compile Include="Commands\ReadTagResponse.cs" />
+    <Compile Include="Commands\GetPreviewImageResponse.cs" />
+    <Compile Include="Commands\GetPrintLabelPreviewCommand.cs" />
+    <Compile Include="Commands\GetPrintLabelPreviewResponse.cs" />
+    <Compile Include="Commands\GetPrintTemplateCommand.cs" />
+    <Compile Include="Commands\GetPrintTemplatePreviewCommand.cs" />
+    <Compile Include="Commands\GetPrintTemplatePreviewResponse.cs" />
+    <Compile Include="Commands\GetPrintTemplateResponse.cs" />
+    <Compile Include="Commands\GetReadFilterCommand.cs" />
+    <Compile Include="Commands\GetReadFilterResponse.cs" />
+    <Compile Include="Commands\ReadTagDataCommand.cs" />
+    <Compile Include="Commands\ReadTagDataResponse.cs" />
+    <Compile Include="Commands\GetTagMetadataCommand.cs" />
+    <Compile Include="Commands\GetTagMetadataResponse.cs" />
+    <Compile Include="Commands\QueryTagsCommand.cs" />
+    <Compile Include="Commands\QueryTagsResponse.cs" />
+    <Compile Include="Commands\KillCommand.cs" />
+    <Compile Include="Commands\KillResponse.cs" />
+    <Compile Include="Commands\LockPartialTagDataCommand.cs" />
+    <Compile Include="Commands\LockPartialTagDataResponse.cs" />
+    <Compile Include="Commands\LockTagCommand.cs" />
+    <Compile Include="Commands\LockTagResponse.cs" />
+    <Compile Include="Core\LockTargets.cs" />
+    <Compile Include="Commands\PrintLabel.cs" />
+    <Compile Include="Commands\PrintTagCommand.cs" />
+    <Compile Include="Commands\PrintTagResponse.cs" />
+    <Compile Include="Core\ReadFilter.cs" />
+    <Compile Include="Commands\RemovePrintTemplateCommand.cs" />
+    <Compile Include="Commands\RemovePrintTemplateResponse.cs" />
+    <Compile Include="Commands\ResetConfigurationToFactorySettingsCommand.cs" />
+    <Compile Include="Commands\ResetConfigurationToFactorySettingsResponse.cs" />
+    <Compile Include="Commands\SetCurrentPrintTemplateNameCommand.cs" />
+    <Compile Include="Commands\SetCurrentPrintTemplateNameResponse.cs" />
+    <Compile Include="Commands\SetReadFilterCommand.cs" />
+    <Compile Include="Commands\SetReadFilterResponse.cs" />
+    <Compile Include="Commands\TagCommand.cs" />
+    <Compile Include="Core\TagDataSelector.cs" />
+    <Compile Include="Core\TagMetadata.cs" />
+    <Compile Include="Core\TagType.cs" />
+    <Compile Include="Commands\UnlockPartialTagDataCommand.cs" />
+    <Compile Include="Commands\UnlockPartialTagDataResponse.cs" />
+    <Compile Include="Commands\UnlockTagCommand.cs" />
+    <Compile Include="Commands\UnlockTagResponse.cs" />
+    <Compile Include="Commands\UpgradeFirmwareCommand.cs" />
+    <Compile Include="Commands\UpgradeFirmwareResponse.cs" />
+    <Compile Include="Commands\VendorDefinedTagCommand.cs" />
+    <Compile Include="Commands\WriteIdCommand.cs" />
+    <Compile Include="Commands\WriteIdResponse.cs" />
+    <Compile Include="Commands\WriteTagCommand.cs" />
+    <Compile Include="Commands\WriteTagResponse.cs" />
+    <Compile Include="Commands\WriteTagDataCommand.cs" />
+    <Compile Include="Commands\WriteTagDataResponse.cs" />
+    <Compile Include="Commands\DedicatedCommand.cs" />
+    <Compile Include="Commands\FieldIncrementInfo.cs" />
+    <Compile Include="Configuration\GeneralPropertyGroup.cs" />
+    <Compile Include="Events\IOPortValueChangedEvent.cs" />
+    <Compile Include="Configuration\NotificationPropertyGroup.cs" />
+    <Compile Include="Events\RfidObservation.cs" />
+    <Compile Include="PhysicalDevices\RfidDeviceProvider.cs" />
+    <Compile Include="PhysicalDevices\RfidDeviceProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Events\RfidEventBase.cs" />
+    <Compile Include="Configuration\RFPropertyGroup.cs" />
+    <Compile Include="Configuration\SourcePropertyGroup.cs" />
+    <Compile Include="Core\SourceType.cs" />
+    <Compile Include="Events\TagListEvent.cs" />
+    <Compile Include="Events\TagReadEvent.cs" />
+    <Compile Include="Configuration\TagReadPropertyGroup.cs" />
+    <Compile Include="Utilities\DuplicateEliminationHandler.cs" />
+    <Compile Include="Utilities\IDuplicateEliminationHandler.cs" />
+    <Compile Include="Utilities\RfidKnownTypesHelper.cs" />
+    <Compile Include="Events\RfidVendorDefinedEvent.cs" />
+    <Compile Include="Core\TagIdKey.cs" />
+    <Compile Include="Utilities\UnifyTagsHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\Kalitte.Sensors.Server\Bin\$(ConfigurationName)\ /y
+copy $(TargetPath) ..\..\..\Kalitte.Sensors.Web.UI\Bin\ /y
+copy $(TargetPath) ..\..\..\Kalitte.Sensors.ServerWcf\Bin\ /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

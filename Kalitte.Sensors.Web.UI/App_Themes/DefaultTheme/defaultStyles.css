@@ -1,0 +1,365 @@
+﻿.watchChartTable .cellMinMax.right
+{
+}
+
+
+.watchChartTable .cellMinMax
+{
+    padding: 3px;
+    background-color: #CCCCCC;
+    width: 100px;
+    font-weight: bold;
+}
+
+.watchChartTable
+{
+    background-color: #FFFFFF;
+}
+
+.noteCls
+{
+    color: #000000 !important;
+}
+
+.x-portlet .x-panel-header
+{
+    height: 15px;
+}
+
+.x-form-text
+{
+    /*background-color: #FFFFE8;     background-image: none;*/
+}
+
+.buttongroup-compositefield
+{
+    background-color: #F0F0F0 !important;
+}
+
+
+.invalidTextBox
+{
+    background-color: #FF3300;
+}
+
+.x-portlet .x-panel-mc
+{
+    padding-top: 0px !important;
+}
+
+.dGrid
+{
+    background-color: #f5f5f5;
+    padding-right: 2px;
+    padding-left: 2px;
+    margin: 0px 10px 0px 0px;
+    border-top: #dcdcdc 1px solid;
+    border-right: #dcdcdc 1px solid;
+    border-left: #dcdcdc 1px solid;
+    border-bottom: #dcdcdc 1px solid;
+    font-size: 10px;
+    border-style: none;
+    line-height: 18px;
+}
+
+.dGrid TD
+{
+    border-style: none;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+
+.dGrid TH
+{
+    border-style: none;
+    padding: 1px 5px;
+    background-image: url('Images/grid-header.gif');
+    background-repeat: repeat-x;
+    text-align: left;
+    font-weight: bold;
+    background-color: #4F6280;
+    color: #E4E4E4;
+}
+
+.dGrid TR
+{
+}
+
+.dGridAlt
+{
+    background-color: #E6E6E6;
+}
+
+.dGridSel TD, .dGridSel TD a
+{
+    background-color: #556a8b;
+    color: #FFFFFF;
+}
+
+.widget-description
+{
+    margin: 2px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+    display: block;
+    font-family: Tahoma;
+}
+
+div.container h1 span
+{
+    display: block;
+}
+
+div.container h1 ul
+{
+    float: right;
+}
+
+div.container h1 ul li
+{
+    float: left;
+    line-height: 1em;
+}
+
+div.container h1 ul li a, div.container h1 ul li a:visited
+{
+    margin-right: 5px;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+div.container select
+{
+    font-size: 11px;
+}
+
+div.container h1 ul li a:hover
+{
+    color: #FF3300;
+}
+
+.container
+{
+    margin-bottom: 0px;
+}
+
+.container h1
+{
+    font-size: 11px;
+    padding-top: 2px;
+    padding-left: 8px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff;
+    margin-bottom: 0px;
+    padding-right: 2px;
+    padding-bottom: 1px;
+    background-color: #666666;
+    background-image: url('Images/container-header.gif');
+    background-repeat: repeat-x;
+}
+
+
+.container div.body
+{
+    border-style: none solid solid solid;
+    border-width: 1px;
+    border-color: #D1D1D1;
+    padding: 2px;
+    background-color: #F4F4F4;
+    clear: both;
+    color: #333333;
+}
+.container div.body.nopad
+{
+    padding: 0px;
+}
+
+.container div.body.noborder
+{
+    border-style: none;
+}
+
+body, p, li, h1, h2, h3, table
+{
+    font-family: "Lucida Grande" , "Lucida Sans Unicode" ,Arial,Verdana,sans-serif;
+    font-size: 11px;
+    color: #333333;
+    line-height: 20px;
+}
+
+p
+{
+    line-height: 16px;
+}
+
+table
+{
+    padding: 0px;
+}
+
+p
+{
+    margin-bottom: 2px;
+}
+
+h1, h2, h3
+{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+    color: #252525;
+    line-height: 20px;
+}
+h1
+{
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #264474;
+}
+
+h2
+{
+    font-size: 13px;
+}
+
+h3
+{
+    font-size: 11px;
+    margin-bottom: 1px;
+}
+.x-grid3-cell-inner
+{
+    font-family: "segoe ui" ,tahoma, arial, sans-serif;
+}
+
+.x-grid-group-hd div
+{
+    font-family: "segoe ui" ,tahoma, arial, sans-serif;
+}
+
+.x-grid3-hd-inner
+{
+    font-family: "segoe ui" ,tahoma, arial, sans-serif;
+    font-size: 11px;
+}
+
+.x-grid3-body .x-grid3-td-Cost
+{
+    background-color: #f1f2f4;
+}
+
+.x-grid3-summary-row .x-grid3-td-Cost
+{
+    background-color: #e1e2e4;
+}
+
+.conditionKirmizi
+{
+    color: Red !important;
+}
+.conditionYesil
+{
+    color: Green !important;
+}
+
+.conditionGray
+{
+    color: Gray !important;
+}
+
+
+.dashboard
+{
+    padding-bottom: 0px !important;
+}
+
+.x-window-body
+{
+}
+
+.disabledField
+{
+    background-color: #EEFFAA !important;
+    background-image: none !important;
+}
+
+table.formTable 
+{
+    width:100%;
+    margin-bottom:5px;
+}
+
+
+table.formTable td.labelCol
+{
+    width:200px;
+}
+
+table.formTable td.controlCol
+{
+    width:80%;
+}
+
+table.formTable td.validCol
+{
+    width: 10px;
+    color: #FF0000;
+    font-weight: bold;
+    text-align:center;
+}
+
+
+table.dataListTable
+{
+    border: 1px solid #FFFFFF;
+    width: 100%;
+}
+
+table.dataListTable tr.header
+{
+    background-color: #00458A;
+    color: #FFFFFF;
+    padding: 2px;
+}
+
+table.dataListTable tr.header td
+{
+    padding:2px;
+}
+
+table.dataListTable tr.seperatorRow td
+{
+    height: 1px;
+    background-color: #CCCCCC;
+}
+
+table.dataListTable tr.item
+{
+    padding: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #FFFFFF;
+}
+
+table.dataListTable tr.item.alternating
+{
+}
+
+table.tagMemory 
+{
+    width:500px;
+    height:218px;
+    margin-bottom:5px;
+}
+
+table.tagMemory td 
+{
+    padding-left:32px;
+    padding-top:45px;
+    width:50%;
+    height:50%;
+}

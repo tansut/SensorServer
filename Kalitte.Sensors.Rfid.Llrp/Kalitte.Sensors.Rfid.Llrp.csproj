@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAB9F644-B76D-4213-B8B3-D9D9D06AA7D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Rfid.Llrp</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Rfid.Llrp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Commands\ApplyPropertyProfileCommandHandler.cs" />
+    <Compile Include="Commands\GetMetadataResponse.cs" />
+    <Compile Include="Commands\AccessSpecCommandHandler.cs" />
+    <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Configuration\LlrpProviderDiscoveryGroup.cs" />
+    <Compile Include="Configuration\LlrpProviderGeneralGroup.cs" />
+    <Compile Include="Events\ConnectionCloseEventArgs.cs" />
+    <Compile Include="Events\DiscoveryEventHandler.cs" />
+    <Compile Include="Commands\DspiCommandProcessor.cs" />
+    <Compile Include="Configuration\GeneralGroup.cs" />
+    <Compile Include="Commands\GetDeviceIdCommand.cs" />
+    <Compile Include="Commands\GetDeviceIdCommandHandler.cs" />
+    <Compile Include="Commands\GetDeviceIdResponse.cs" />
+    <Compile Include="Commands\GetMetadataCommand.cs" />
+    <Compile Include="Commands\GetMetadataCommandHandler.cs" />
+    <Compile Include="Commands\ReadTagCommandHandler.cs" />
+    <Compile Include="Commands\GetPropertyCommandHandler.cs" />
+    <Compile Include="Commands\GetPropertyProfileCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\GetSourcesCommand.cs" />
+    <Compile Include="Commands\GetSourcesCommandHandler.cs" />
+    <Compile Include="Commands\GetSourcesResponse.cs" />
+    <Compile Include="Commands\ReadTagDataCommandHandler.cs" />
+    <Compile Include="Commands\QueryTagsCommandHandler.cs" />
+    <Compile Include="PhysicalDevices\ILlrpDeviceProxyManager.cs" />
+    <Compile Include="PhysicalDevices\IncomingLlrpConnectionListener.cs" />
+    <Compile Include="PhysicalDevices\IncomingLlrpConnectionManager.cs" />
+    <Compile Include="Commands\KillTagCommandHandler.cs" />
+    <Compile Include="Commands\LastTagReportInformation.cs" />
+    <Compile Include="Configuration\LlrpAccessReportSpecGroup.cs" />
+    <Compile Include="Configuration\LlrpAntennaConfigurationGroup.cs" />
+    <Compile Include="Configuration\LlrpAntennaPropertiesGroup.cs" />
+    <Compile Include="Configuration\LlrpC1G2CapabilitiesGroup.cs" />
+    <Compile Include="Configuration\LlrpC1G2InventoryCommandGroup.cs" />
+    <Compile Include="Configuration\LlrpCapabilitiesGroup.cs" />
+    <Compile Include="Configuration\LlrpConfigurationStateGroup.cs" />
+    <Compile Include="PhysicalDevices\LlrpDevice.cs" />
+    <Compile Include="Communication\AsyncResult.cs" />
+    <Compile Include="Communication\BufferPool.cs" />
+    <Compile Include="Communication\LlrpBinaryEncoder.cs" />
+    <Compile Include="Communication\LlrpBinaryEncoderBase.cs" />
+    <Compile Include="Communication\LlrpChannelFactory.cs" />
+    <Compile Include="Communication\LlrpChannelListener.cs" />
+    <Compile Include="Communication\LlrpDuplexChannel.cs" />
+    <Compile Include="Communication\LlrpTransportBindingElement.cs" />
+    <Compile Include="Communication\ReceiveMessageAsyncResult.cs" />
+    <Compile Include="Communication\TypedAsyncResult.cs" />
+    <Compile Include="Events\ConnectionAttemptEventKeys.cs" />
+    <Compile Include="Core\AccessCommand.cs" />
+    <Compile Include="Core\AccessReportSpec.cs" />
+    <Compile Include="Core\AccessReportTrigger.cs" />
+    <Compile Include="Core\AccessSpec.cs" />
+    <Compile Include="Core\AccessSpecId.cs" />
+    <Compile Include="Core\AccessSpecStopTrigger.cs" />
+    <Compile Include="Core\AccessSpecStopTriggerType.cs" />
+    <Compile Include="Core\AddAccessSpecMessage.cs" />
+    <Compile Include="Core\AddAccessSpecResponse.cs" />
+    <Compile Include="Core\AddROSpecMessage.cs" />
+    <Compile Include="Core\AddROSpecResponse.cs" />
+    <Compile Include="Core\AirProtocolId.cs" />
+    <Compile Include="Core\AirProtocolInventoryCommandSettings.cs" />
+    <Compile Include="Core\AirProtocolLlrpCapabilities.cs" />
+    <Compile Include="Core\AirProtocolOPSpec.cs" />
+    <Compile Include="Core\AirProtocolSingulationDetails.cs" />
+    <Compile Include="Core\AirProtocolSpecificEpcMemorySelectorParameter.cs" />
+    <Compile Include="Core\AirProtocolSpecificOPSpecResult.cs" />
+    <Compile Include="Core\AirProtocolTagData.cs" />
+    <Compile Include="Core\AISpec.cs" />
+    <Compile Include="Core\AISpecEvent.cs" />
+    <Compile Include="Core\AISpecEventType.cs" />
+    <Compile Include="Core\AISpecStopTrigger.cs" />
+    <Compile Include="Core\AISpecStopTriggerType.cs" />
+    <Compile Include="Core\AntennaConfiguration.cs" />
+    <Compile Include="Core\AntennaEvent.cs" />
+    <Compile Include="Core\AntennaEventType.cs" />
+    <Compile Include="Core\AntennaId.cs" />
+    <Compile Include="Core\AntennaProperties.cs" />
+    <Compile Include="Core\BinaryProtocolConstantsBits.cs" />
+    <Compile Include="Core\C1G2BlockErase.cs" />
+    <Compile Include="Core\C1G2BlockEraseOPSpecResult.cs" />
+    <Compile Include="Core\C1G2BlockEraseOPSpecResultType.cs" />
+    <Compile Include="Core\C1G2BlockWrite.cs" />
+    <Compile Include="Core\C1G2BlockWriteOPSpecResult.cs" />
+    <Compile Include="Core\C1G2BlockWriteOPSpecResultType.cs" />
+    <Compile Include="Core\C1G2Crc.cs" />
+    <Compile Include="Core\C1G2EpcMemorySelector.cs" />
+    <Compile Include="Core\C1G2Filter.cs" />
+    <Compile Include="Core\C1G2InventoryCommand.cs" />
+    <Compile Include="Core\C1G2Kill.cs" />
+    <Compile Include="Core\C1G2KillOPSpecResult.cs" />
+    <Compile Include="Core\C1G2KillOPSpecResultType.cs" />
+    <Compile Include="Core\C1G2LlrpCapabilities.cs" />
+    <Compile Include="Core\C1G2Lock.cs" />
+    <Compile Include="Core\C1G2LockDataField.cs" />
+    <Compile Include="Core\C1G2LockOPSpecResult.cs" />
+    <Compile Include="Core\C1G2LockOPSpecResultType.cs" />
+    <Compile Include="Core\C1G2LockPayload.cs" />
+    <Compile Include="Core\C1G2LockPrivilege.cs" />
+    <Compile Include="Core\C1G2OPSpec.cs" />
+    <Compile Include="Core\C1G2OPSpecResult.cs" />
+    <Compile Include="Core\C1G2PC.cs" />
+    <Compile Include="Core\C1G2Read.cs" />
+    <Compile Include="Core\C1G2ReadOPSpecResult.cs" />
+    <Compile Include="Core\C1G2ReadOPSpecResultType.cs" />
+    <Compile Include="Core\C1G2RFControl.cs" />
+    <Compile Include="Core\C1G2SingulationControl.cs" />
+    <Compile Include="Core\C1G2SingulationDetails.cs" />
+    <Compile Include="Core\C1G2TagInventoryMask.cs" />
+    <Compile Include="Core\C1G2TagInventoryStateAwareFilterAction.cs" />
+    <Compile Include="Core\C1G2TagInventoryStateAwareSingulationAction.cs" />
+    <Compile Include="Core\C1G2TagInventoryStateUnawareFilterAction.cs" />
+    <Compile Include="Core\C1G2TagSpec.cs" />
+    <Compile Include="Core\C1G2TargetTag.cs" />
+    <Compile Include="Core\C1G2TruncateAction.cs" />
+    <Compile Include="Core\C1G2Write.cs" />
+    <Compile Include="Core\C1G2WriteOPSpecResult.cs" />
+    <Compile Include="Core\C1G2WriteOPSpecResultType.cs" />
+    <Compile Include="Core\ChannelIndex.cs" />
+    <Compile Include="Core\ClientRequestOP.cs" />
+    <Compile Include="Core\ClientRequestOPResponse.cs" />
+    <Compile Include="Core\ClientRequestOPSpec.cs" />
+    <Compile Include="Core\ClientRequestOPSpecResult.cs" />
+    <Compile Include="Core\ClientRequestResponseParameter.cs" />
+    <Compile Include="Core\CloseConnectionMessage.cs" />
+    <Compile Include="Core\CloseConnectionResponse.cs" />
+    <Compile Include="Core\CommunicationStandard.cs" />
+    <Compile Include="Core\ConnectionAttemptEvent.cs" />
+    <Compile Include="Core\ConnectionAttemptEventType.cs" />
+    <Compile Include="Core\ConnectionCloseEvent.cs" />
+    <Compile Include="Core\ConstantValues.cs" />
+    <Compile Include="Core\CustomMessage.cs" />
+    <Compile Include="Core\CustomMessageBase.cs" />
+    <Compile Include="Core\CustomParameterBase.cs" />
+    <Compile Include="Core\DeleteAccessSpecMessage.cs" />
+    <Compile Include="Core\DeleteAccessSpecResponse.cs" />
+    <Compile Include="Core\DeleteROSpecMessage.cs" />
+    <Compile Include="Core\DeleteROSpecResponse.cs" />
+    <Compile Include="Core\DisableAccessSpecMessage.cs" />
+    <Compile Include="Core\DisableAccessSpecResponse.cs" />
+    <Compile Include="Core\DisableROSpecMessage.cs" />
+    <Compile Include="Core\DisableROSpecResponse.cs" />
+    <Compile Include="Core\DRValue.cs" />
+    <Compile Include="Core\EnableAccessSpecMessage.cs" />
+    <Compile Include="Core\EnableAccessSpecResponse.cs" />
+    <Compile Include="Core\EnableEventsAndReportsMessage.cs" />
+    <Compile Include="Core\EnableROSpecMessage.cs" />
+    <Compile Include="Core\EnableROSpecResponse.cs" />
+    <Compile Include="Core\EPC96.cs" />
+    <Compile Include="Core\EpcData.cs" />
+    <Compile Include="Core\ErrorMessage.cs" />
+    <Compile Include="Core\EventNotificationState.cs" />
+    <Compile Include="Core\EventNotificationStateEventType.cs" />
+    <Compile Include="Core\EventsAndReport.cs" />
+    <Compile Include="Core\FieldError.cs" />
+    <Compile Include="Core\FirstSeenTimestampUptime.cs" />
+    <Compile Include="Core\FirstSeenTimestampUtc.cs" />
+    <Compile Include="Core\FixedFrequencyTable.cs" />
+    <Compile Include="Core\ForwardLinkModulation.cs" />
+    <Compile Include="Core\FrequencyHopTable.cs" />
+    <Compile Include="Core\FrequencyInformation.cs" />
+    <Compile Include="Core\FrequencyRssiLevelEntry.cs" />
+    <Compile Include="Core\GeneralDeviceCapabilities.cs" />
+    <Compile Include="Core\GenericCustomParameter.cs" />
+    <Compile Include="Core\GetAccessSpecMessage.cs" />
+    <Compile Include="Core\GetAccessSpecResponse.cs" />
+    <Compile Include="Core\GetReaderCapabilitiesMessage.cs" />
+    <Compile Include="Core\GetReaderCapabilitiesResponse.cs" />
+    <Compile Include="Core\GetReaderConfigurationMessage.cs" />
+    <Compile Include="Core\GetReaderConfigurationResponse.cs" />
+    <Compile Include="Core\GetReportMessage.cs" />
+    <Compile Include="Core\GetROSpecMessage.cs" />
+    <Compile Include="Core\GetROSpecResponse.cs" />
+    <Compile Include="Core\GpiEvent.cs" />
+    <Compile Include="Core\GpioCapabilities.cs" />
+    <Compile Include="Core\GpiPortCurrentState.cs" />
+    <Compile Include="Core\GpiState.cs" />
+    <Compile Include="Core\GpiTrigger.cs" />
+    <Compile Include="Core\GpoWriteData.cs" />
+    <Compile Include="Core\HoppingEvent.cs" />
+    <Compile Include="Core\IdentificationParameter.cs" />
+    <Compile Include="Core\IdentificationType.cs" />
+    <Compile Include="Core\IdGenerator.cs" />
+    <Compile Include="Core\InventoryParameterSpec.cs" />
+    <Compile Include="Core\InventoryParameterSpecId.cs" />
+    <Compile Include="Core\KeepAliveAcknowledgementResponse.cs" />
+    <Compile Include="Core\KeepAliveMessage.cs" />
+    <Compile Include="Core\KeepAliveSpec.cs" />
+    <Compile Include="Core\KeepAliveTriggerType.cs" />
+    <Compile Include="Core\LastSeenTimestampUptime.cs" />
+    <Compile Include="Core\LastSeenTimestampUtc.cs" />
+    <Compile Include="Core\LlrpCapabilities.cs" />
+    <Compile Include="Core\LlrpConfigurationStateValue.cs" />
+    <Compile Include="Core\LlrpEvent.cs" />
+    <Compile Include="Core\LlrpMessageBase.cs" />
+    <Compile Include="Core\LlrpMessageRequestBase.cs" />
+    <Compile Include="Core\LlrpMessageResponseBase.cs" />
+    <Compile Include="Core\LlrpMessageType.cs" />
+    <Compile Include="Core\LlrpParameterBase.cs" />
+    <Compile Include="Core\LlrpParameterType.cs" />
+    <Compile Include="Core\LLRPSourceType.cs" />
+    <Compile Include="Core\LlrpStatus.cs" />
+    <Compile Include="Core\LlrpTlvParameterBase.cs" />
+    <Compile Include="Core\LlrpTVParameterBase.cs" />
+    <Compile Include="Core\MValue.cs" />
+    <Compile Include="Core\OPSpec.cs" />
+    <Compile Include="Core\OPSpecId.cs" />
+    <Compile Include="Core\ParameterError.cs" />
+    <Compile Include="Core\PeakRssi.cs" />
+    <Compile Include="Core\PerAntennaAirProtocol.cs" />
+    <Compile Include="Core\PerAntennaReceiveSensitivityRange.cs" />
+    <Compile Include="Core\PeriodicTrigger.cs" />
+    <Compile Include="Core\ReaderCapabilitiesRequestedData.cs" />
+    <Compile Include="Core\ReaderConfigurationRequestedData.cs" />
+    <Compile Include="Core\ReaderEventNotificationData.cs" />
+    <Compile Include="Core\ReaderEventNotificationMessage.cs" />
+    <Compile Include="Core\ReaderEventNotificationSpec.cs" />
+    <Compile Include="Core\ReaderExceptionEvent.cs" />
+    <Compile Include="Core\ReceiveSensitivityTableEntry.cs" />
+    <Compile Include="Core\RegulatoryCapabilities.cs" />
+    <Compile Include="Core\ReportBufferLevelWarningEvent.cs" />
+    <Compile Include="Core\ReportBufferOverflowErrorEvent.cs" />
+    <Compile Include="Core\RFReceiver.cs" />
+    <Compile Include="Core\RFSurveyEvent.cs" />
+    <Compile Include="Core\RFSurveyEventType.cs" />
+    <Compile Include="Core\RFSurveyReportData.cs" />
+    <Compile Include="Core\RFSurveySpec.cs" />
+    <Compile Include="Core\RFSurveySpecStopTrigger.cs" />
+    <Compile Include="Core\RFSurveySpecStopTriggerType.cs" />
+    <Compile Include="Core\RFTransmitter.cs" />
+    <Compile Include="Core\ROAccessReport.cs" />
+    <Compile Include="Core\ROBoundarySpec.cs" />
+    <Compile Include="Core\ROReportSpec.cs" />
+    <Compile Include="Core\ROReportTrigger.cs" />
+    <Compile Include="Core\ROSpec.cs" />
+    <Compile Include="Core\ROSpecEvent.cs" />
+    <Compile Include="Core\ROSpecEventType.cs" />
+    <Compile Include="Core\ROSpecId.cs" />
+    <Compile Include="Core\ROSpecStartTrigger.cs" />
+    <Compile Include="Core\ROSpecStartTriggerType.cs" />
+    <Compile Include="Core\ROSpecState.cs" />
+    <Compile Include="Core\ROSpecStopTrigger.cs" />
+    <Compile Include="Core\ROSpecStopTriggerType.cs" />
+    <Compile Include="Core\SetReaderConfigurationMessage.cs" />
+    <Compile Include="Core\SetReaderConfigurationResponse.cs" />
+    <Compile Include="Core\SpecialMaskIndicator.cs" />
+    <Compile Include="Core\SpecIndex.cs" />
+    <Compile Include="Core\StartROSpecMessage.cs" />
+    <Compile Include="Core\StartROSpecResponse.cs" />
+    <Compile Include="Core\StatusCode.cs" />
+    <Compile Include="Core\StopROSpecMessage.cs" />
+    <Compile Include="Core\StopROSpecResponse.cs" />
+    <Compile Include="Core\TagInventoryAwareAction.cs" />
+    <Compile Include="Core\TagInventoryAwareTarget.cs" />
+    <Compile Include="Core\TagInventoryState.cs" />
+    <Compile Include="Core\TagInventoryUnawareAction.cs" />
+    <Compile Include="Core\TagObservationTrigger.cs" />
+    <Compile Include="Core\TagObservationTriggerType.cs" />
+    <Compile Include="Core\TagReportContentSelector.cs" />
+    <Compile Include="Core\TagReportData.cs" />
+    <Compile Include="Core\TagSeenCount.cs" />
+    <Compile Include="Core\TagSession.cs" />
+    <Compile Include="Core\TagSLState.cs" />
+    <Compile Include="Core\TagSpec.cs" />
+    <Compile Include="Core\TransmitPowerLevelTableEntry.cs" />
+    <Compile Include="Core\UhfBandCapabilities.cs" />
+    <Compile Include="Core\UhfC1G2RFModeTable.cs" />
+    <Compile Include="Core\UhfC1G2RFModeTableEntry.cs" />
+    <Compile Include="Core\UhfRFModeTable.cs" />
+    <Compile Include="Core\Uptime.cs" />
+    <Compile Include="Core\UtcTimestamp.cs" />
+    <Compile Include="Exceptions\DecodingException.cs" />
+    <Compile Include="Core\ErrorCodes.cs" />
+    <Compile Include="Helpers\BitHelper.cs" />
+    <Compile Include="Helpers\RfidUtilitiesStrings.cs" />
+    <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Events\HoppingEventKeys.cs" />
+    <Compile Include="Core\LLRPElement.cs" />
+    <Compile Include="Core\LlrpErrorCode.cs" />
+    <Compile Include="Events\LlrpEventTypes.cs" />
+    <Compile Include="Utilities\LlrpKnownTypesHelper.cs" />
+    <Compile Include="PhysicalDevices\LlrpDeviceProvider.cs" />
+    <Compile Include="PhysicalDevices\LlrpDeviceProxy.cs" />
+    <Compile Include="PhysicalDevices\LlrpDeviceProxyManager.cs" />
+    <Compile Include="PhysicalDevices\LlrpDeviceState.cs" />
+    <Compile Include="Configuration\LlrpEventsAndReportGroup.cs" />
+    <Compile Include="Configuration\LlrpGeneralCapabilitiesGroup.cs" />
+    <Compile Include="Configuration\LlrpKeepAliveSpecGroup.cs" />
+    <Compile Include="Configuration\LlrpManagementGroup.cs" />
+    <Compile Include="Events\LlrpMessageEventArgs.cs" />
+    <Compile Include="Core\LLRPMessageStream.cs" />
+    <Compile Include="Events\MultipleNicWarningEvent.cs" />
+    <Compile Include="Events\NoNicWarningEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\LlrpResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LlrpResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\LlrpMessageVendorDefinedCommandHandler.cs" />
+    <Compile Include="Configuration\LlrpProviderConnectionGroup.cs" />
+    <Compile Include="PhysicalDevices\LlrpProviderContext.cs" />
+    <Compile Include="Configuration\LlrpProviderManagementGroup.cs" />
+    <Compile Include="Configuration\LlrpReaderEventNotificationSpecGroup.cs" />
+    <Compile Include="Configuration\LlrpRegulatoryCapabilitiesGroup.cs" />
+    <Compile Include="Configuration\LlrpROReportSpecGroup.cs" />
+    <Compile Include="Configuration\LlrpTroubleshootGroup.cs" />
+    <Compile Include="Commands\LockTagCommandHandler.cs" />
+    <Compile Include="Configuration\NotificationGroup.cs" />
+    <Compile Include="PhysicalDevices\PDPState.cs" />
+    <Compile Include="PhysicalDevices\PendingMessageInformation.cs" />
+    <Compile Include="Commands\ResetConfigurationToFactorySettingsCommandHandler.cs" />
+    <Compile Include="Configuration\RFGroup.cs" />
+    <Compile Include="Commands\SetPropertyCommandHandler.cs" />
+    <Compile Include="Commands\ShutdownCommand.cs" />
+    <Compile Include="Commands\ShutdownCommandHandler.cs" />
+    <Compile Include="Configuration\SourceGroup.cs" />
+    <Compile Include="Commands\StartInventoryCommand.cs" />
+    <Compile Include="Commands\StartInventoryCommandHandler.cs" />
+    <Compile Include="Commands\StopInventoryCommand.cs" />
+    <Compile Include="Commands\StopInventoryCommandHandler.cs" />
+    <Compile Include="Configuration\TagReadGroup.cs" />
+    <Compile Include="Commands\UnlockTagCommandHandler.cs" />
+    <Compile Include="Commands\WriteIdCommandHandler.cs" />
+    <Compile Include="Commands\WriteTagCommandHandler.cs" />
+    <Compile Include="Commands\WriteTagDataCommandHandler.cs" />
+    <Compile Include="Events\ReaderExceptionEventKeys.cs" />
+    <Compile Include="Events\RFSurveyEventKeys.cs" />
+    <Compile Include="Events\RFSurveyReportEventKeys.cs" />
+    <Compile Include="Utilities\LlrpSerializationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\LlrpResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LlrpResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensors.Rfid\Kalitte.Sensors.Rfid.csproj">
+      <Project>{A8E58203-BF18-4C69-B2A8-D3F554B2B24D}</Project>
+      <Name>Kalitte.Sensors.Rfid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\Kalitte.Sensors.Server\Bin\$(ConfigurationName)\ /y
+copy $(TargetPath) ..\..\..\Kalitte.Sensors.ServerWcf\Bin\ /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

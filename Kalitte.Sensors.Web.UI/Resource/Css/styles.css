@@ -1,0 +1,16 @@
+﻿.logViewerFatalRowClass
+{
+	        background: #B02705;
+} 
+.logViewerErrorRowClass
+{
+	        background: #F77273;
+} 
+.logViewerWarningRowClass
+{
+	        background: #F9E68A;
+} 
+.lastEventViewerRowClass
+{
+	        background: #FFFF9C;
+} 

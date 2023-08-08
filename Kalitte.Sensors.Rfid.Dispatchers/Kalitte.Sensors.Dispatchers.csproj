@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4019FE7A-DB6F-4B45-A3AF-61F84A282A7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Dispatchers</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Dispatchers</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="MyDispatcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wcf\DispatcherProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Wcf\SubscriptionService.cs" />
+    <Compile Include="Wcf\ISubscriptionService.cs" />
+    <Compile Include="Wcf\PublishService.cs" />
+    <Compile Include="Wcf\PublishServiceBase.cs" />
+    <Compile Include="Wcf\SubscriptionServiceBase.cs" />
+    <Compile Include="Wcf\Subscriber.cs" />
+    <Compile Include="Wcf\Dispatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensors.Processing\Kalitte.Sensors.Processing.csproj">
+      <Project>{714CA8C7-B7E4-44BF-BA14-CB029F535652}</Project>
+      <Name>Kalitte.Sensors.Processing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors.Rfid.EventModules.Client\Kalitte.Sensors.Rfid.EventModules.Client.csproj">
+      <Project>{E4B67918-0A59-41AB-B696-7386597D90C7}</Project>
+      <Name>Kalitte.Sensors.Rfid.EventModules.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors.Rfid\Kalitte.Sensors.Rfid.csproj">
+      <Project>{A8E58203-BF18-4C69-B2A8-D3F554B2B24D}</Project>
+      <Name>Kalitte.Sensors.Rfid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Msmq\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\Kalitte.Sensors.Server\Bin\$(ConfigurationName)\ /y
+copy $(TargetFileName).config ..\..\..\Kalitte.Sensors.Server\Bin\$(ConfigurationName)\ /y
+copy $(TargetPath) ..\..\..\Kalitte.Sensors.ServerWcf\Bin\ /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

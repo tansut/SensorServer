@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors</RootNamespace>
+    <AssemblyName>Kalitte.Sensors</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Commands\ApplyPropertyListCommand.cs" />
+    <Compile Include="Commands\ApplyPropertyListFailedError.cs" />
+    <Compile Include="Commands\ApplyPropertyListResponse.cs" />
+    <Compile Include="Commands\MayChangeState.cs" />
+    <Compile Include="Commands\SensorCommand.cs" />
+    <Compile Include="Commands\CommandError.cs" />
+    <Compile Include="Commands\GetActivePropertyListCommand.cs" />
+    <Compile Include="Commands\GetActivePropertyListResponse.cs" />
+    <Compile Include="Commands\GetDefaultPropertyListCommand.cs" />
+    <Compile Include="Commands\GetDefaultPropertyGroupResponse.cs" />
+    <Compile Include="Commands\GetPropertyCommand.cs" />
+    <Compile Include="Commands\GetPropertyResponse.cs" />
+    <Compile Include="Commands\Response.cs" />
+    <Compile Include="Commands\ResponseEventArgs.cs" />
+    <Compile Include="Commands\SetPropertyCommand.cs" />
+    <Compile Include="Commands\SetPropertyResponse.cs" />
+    <Compile Include="Commands\VendorCommand.cs" />
+    <Compile Include="Commands\VendorResponse.cs" />
+    <Compile Include="Communication\ConnectionInformation.cs" />
+    <Compile Include="Communication\TcpTransportSettings.cs" />
+    <Compile Include="Communication\TransportSettings.cs" />
+    <Compile Include="Communication\VendorTransportSettings.cs" />
+    <Compile Include="Configuration\HostingConfiguration.cs" />
+    <Compile Include="Configuration\PropertyKeyBindingAttribute.cs" />
+    <Compile Include="Configuration\ServerConfigurationPropertyMetadata.cs" />
+    <Compile Include="Configuration\DispatcherMetadata.cs" />
+    <Compile Include="Configuration\DispatcherPropertyMetadata.cs" />
+    <Compile Include="Configuration\EntityProperty.cs" />
+    <Compile Include="Configuration\EntityType.cs" />
+    <Compile Include="Configuration\EventModuleMetadata.cs" />
+    <Compile Include="Configuration\EventModulePropertyMetadata.cs" />
+    <Compile Include="Configuration\ExtendedMetadata.cs" />
+    <Compile Include="Configuration\ExtendedPropertyMetadata.cs" />
+    <Compile Include="Configuration\LogConfiguration.cs" />
+    <Compile Include="Configuration\LogicalSensorMetadata.cs" />
+    <Compile Include="Configuration\LogicalSensorPropertyMetadata.cs" />
+    <Compile Include="Configuration\MetadataKeys.cs" />
+    <Compile Include="Configuration\ProcessorMetadata.cs" />
+    <Compile Include="Configuration\ProcessorPropertyMetadata.cs" />
+    <Compile Include="Configuration\PropertyKey.cs" />
+    <Compile Include="Configuration\PropertyList.cs" />
+    <Compile Include="Configuration\PropertySensorTarget.cs" />
+    <Compile Include="Configuration\ProviderCapability.cs" />
+    <Compile Include="Configuration\ProviderInformation.cs" />
+    <Compile Include="Configuration\ProviderMetadata.cs" />
+    <Compile Include="Configuration\DevicePropertyMetadata.cs" />
+    <Compile Include="Configuration\EntityMetadata.cs" />
+    <Compile Include="Configuration\ProviderPropertyMetadata.cs" />
+    <Compile Include="Configuration\SensorConfigurationSection.cs" />
+    <Compile Include="Configuration\KnownTypesProvider.cs" />
+    <Compile Include="Configuration\KnownTypesProviderCollection.cs" />
+    <Compile Include="Configuration\SensorServerConfigurationSection.cs" />
+    <Compile Include="Configuration\ServerConfiguration.cs" />
+    <Compile Include="Configuration\ServerAnalyseItem.cs" />
+    <Compile Include="Configuration\ServerAnalyseLevel.cs" />
+    <Compile Include="Configuration\ServerConfigurationMetadata.cs" />
+    <Compile Include="Configuration\ServiceConfiguration.cs" />
+    <Compile Include="Configuration\VendorEntityKey.cs" />
+    <Compile Include="Configuration\VendorEntityMetadata.cs" />
+    <Compile Include="Configuration\VendorEntityParameterMetadata.cs" />
+    <Compile Include="Configuration\ServerAnalyseConfiguration.cs" />
+    <Compile Include="Core\DataFormat.cs" />
+    <Compile Include="Core\ErrorCode.cs" />
+    <Compile Include="Core\ILogger.cs" />
+    <Compile Include="Events\LastEvent.cs" />
+    <Compile Include="Events\LastEventFilter.cs" />
+    <Compile Include="Exceptions\DispatcherException.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Processing\Metadata\ItemMonitoring.cs" />
+    <Compile Include="Processing\Metadata\ProviderDiscoveryBehaviour.cs" />
+    <Compile Include="Processing\PipeNullEventBehavior.cs" />
+    <Compile Include="Processing\DispatcherModuleInformation.cs" />
+    <Compile Include="Processing\Metadata\ISupportsLog.cs" />
+    <Compile Include="Processing\Metadata\LogLevelInformation.cs" />
+    <Compile Include="Processing\Metadata\NameDescription.cs" />
+    <Compile Include="Processing\Metadata\NameDescriptionList.cs" />
+    <Compile Include="Security\ExceptionManager.cs" />
+    <Compile Include="Security\SensorLicenseManager.cs" />
+    <Compile Include="Security\SensorRoles.cs" />
+    <Compile Include="Security\LogLevel.cs" />
+    <Compile Include="Core\VendorData.cs" />
+    <Compile Include="Events\Management\DeviceConnectionDownEvent.cs" />
+    <Compile Include="Events\Management\DeviceManagementEvent.cs" />
+    <Compile Include="Events\Management\EventLevel.cs" />
+    <Compile Include="Events\Management\EventType.cs" />
+    <Compile Include="Events\Management\FreeMemoryLowEvent.cs" />
+    <Compile Include="Events\Management\ManagementEvent.cs" />
+    <Compile Include="Events\Management\ProviderDefunctEvent.cs" />
+    <Compile Include="Events\Management\SourceDownEvent.cs" />
+    <Compile Include="Events\Management\SourceUpEvent.cs" />
+    <Compile Include="Events\Management\VendorDefinedManagementEvent.cs" />
+    <Compile Include="Events\Notification.cs" />
+    <Compile Include="Events\NotificationEventArgs.cs" />
+    <Compile Include="Events\Management\ProviderManagementEvent.cs" />
+    <Compile Include="Events\GenericSensorEvent.cs" />
+    <Compile Include="Events\SensorObservation.cs" />
+    <Compile Include="Events\SensorEventBase.cs" />
+    <Compile Include="Exceptions\ConnectionFailedException.cs" />
+    <Compile Include="Exceptions\MultipleInnerException.cs" />
+    <Compile Include="Exceptions\ProcessorException.cs" />
+    <Compile Include="Exceptions\RemoteObjectException.cs" />
+    <Compile Include="Exceptions\SensorFault.cs" />
+    <Compile Include="Exceptions\SensorProviderException.cs" />
+    <Compile Include="Exceptions\SensorException.cs" />
+    <Compile Include="Interfaces\IEventDispatcher.cs" />
+    <Compile Include="Interfaces\IProcessorDispatcher.cs" />
+    <Compile Include="Interfaces\ISensorCommandProcessor.cs" />
+    <Compile Include="Interfaces\ISensorObservation.cs" />
+    <Compile Include="Processing\AppContext.cs" />
+    <Compile Include="Processing\EventModuleInformation.cs" />
+    <Compile Include="Processing\NonExistEventHandlerBehavior.cs" />
+    <Compile Include="Processing\SensorEventHandlerAttribute.cs" />
+    <Compile Include="Processing\ISensorContext.cs" />
+    <Compile Include="Processing\ItemState.cs" />
+    <Compile Include="Processing\ItemStateInfo.cs" />
+    <Compile Include="Processing\ItemStartupType.cs" />
+    <Compile Include="Processing\LastException.cs" />
+    <Compile Include="Processing\MarshalLoader.cs" />
+    <Compile Include="Processing\Metadata\EntityPropertyBase.cs" />
+    <Compile Include="Processing\Metadata\ICanInstanceCreate.cs" />
+    <Compile Include="Processing\Metadata\IEntityPropertyProvider.cs" />
+    <Compile Include="Processing\Metadata\Dispatcher2ProcesorBindingRuntime.cs" />
+    <Compile Include="Processing\Metadata\Dispatcher2ProcessorBindingEntity.cs" />
+    <Compile Include="Processing\Metadata\Dispatcher2ProcessorBindingProperty.cs" />
+    <Compile Include="Processing\Metadata\DispatcherEntity.cs" />
+    <Compile Include="Processing\Metadata\DispatcherProperty.cs" />
+    <Compile Include="Processing\Metadata\DispatcherRuntime.cs" />
+    <Compile Include="Processing\Metadata\EventModuleEntity.cs" />
+    <Compile Include="Processing\Metadata\EventModuleProperty.cs" />
+    <Compile Include="Processing\Metadata\EventModuleRuntime.cs" />
+    <Compile Include="Processing\Metadata\ProcessorEntity.cs" />
+    <Compile Include="Processing\Metadata\ProcessorProperty.cs" />
+    <Compile Include="Processing\Metadata\ProcessorRuntime.cs" />
+    <Compile Include="Processing\Metadata\Logical2ProcessorBindingEntity.cs" />
+    <Compile Include="Processing\Metadata\Logical2ProcessorBindingProperty.cs" />
+    <Compile Include="Processing\Metadata\Logical2ProcessorBindingRuntime.cs" />
+    <Compile Include="Processing\Metadata\Logical2SensorBindingEntity.cs" />
+    <Compile Include="Processing\Metadata\Logical2SensorBindingProperty.cs" />
+    <Compile Include="Processing\Metadata\Logical2SensorBindingRuntime.cs" />
+    <Compile Include="Processing\Metadata\LogicalSensorEntity.cs" />
+    <Compile Include="Processing\Metadata\LogicalSensorProperty.cs" />
+    <Compile Include="Processing\Metadata\LogicalSensorRuntime.cs" />
+    <Compile Include="Processing\Metadata\PersistEntityBase.cs" />
+    <Compile Include="Processing\Metadata\Processor2ModuleBindingEntity.cs" />
+    <Compile Include="Processing\Metadata\Processor2ModuleBindingProperty.cs" />
+    <Compile Include="Processing\Metadata\Processor2ModuleBindingRuntime.cs" />
+    <Compile Include="Processing\Metadata\SensorDeviceEntity.cs" />
+    <Compile Include="Processing\Metadata\SensorDeviceProperty.cs" />
+    <Compile Include="Processing\Metadata\SensorDeviceRuntime.cs" />
+    <Compile Include="Processing\Metadata\SensorProviderEntity.cs" />
+    <Compile Include="Processing\Metadata\SensorProviderProperty.cs" />
+    <Compile Include="Processing\Metadata\SensorProviderRuntime.cs" />
+    <Compile Include="Processing\SensorEventModule.cs" />
+    <Compile Include="Processing\ProcessingItem.cs" />
+    <Compile Include="Processing\ProcessorContext.cs" />
+    <Compile Include="Processing\SensorContext.cs" />
+    <Compile Include="Processing\DispatcherModule.cs" />
+    <Compile Include="Processing\DispatcherContext.cs" />
+    <Compile Include="Processing\SensorEventList.cs" />
+    <Compile Include="Processing\SensorProviderContext.cs" />
+    <Compile Include="Processing\VirtualMarshal.cs" />
+    <Compile Include="Security\ChangeableStreamWriter.cs" />
+    <Compile Include="Security\DomainLogger.cs" />
+    <Compile Include="Processing\MarshalBase.cs" />
+    <Compile Include="Security\FileLogger.cs" />
+    <Compile Include="Security\LogFileParser.cs" />
+    <Compile Include="Security\LogItemInfo.cs" />
+    <Compile Include="Security\LogQuery.cs" />
+    <Compile Include="Security\LogQueryResult.cs" />
+    <Compile Include="Security\LogRotater.cs" />
+    <Compile Include="Security\StreamLogger.cs" />
+    <Compile Include="SensorDevices\SensorDeviceInformation.cs" />
+    <Compile Include="SensorDevices\SensorDeviceInformationBase.cs" />
+    <Compile Include="SensorDevices\SensorProvider.cs" />
+    <Compile Include="SensorDevices\DiscoveryEventArgs.cs" />
+    <Compile Include="SensorDevices\SensorProxy.cs" />
+    <Compile Include="Security\AuthenticationInformation.cs" />
+    <Compile Include="Security\UserNameAuthenticationInformation.cs" />
+    <Compile Include="Service\ClearTcpBinding.cs" />
+    <Compile Include="Service\ServiceBindingManager.cs" />
+    <Compile Include="UI\ICustomPropertyEditor.cs" />
+    <Compile Include="UI\ISensorCommandEditor.cs" />
+    <Compile Include="UI\PropertyEditorAttribute.cs" />
+    <Compile Include="UI\SensorCommandEditorAttribute.cs" />
+    <Compile Include="UI\WebEditorAttribute.cs" />
+    <Compile Include="Utilities\CollectionsHelper.cs" />
+    <Compile Include="Utilities\HexHelper.cs" />
+    <Compile Include="Utilities\MarshalHelper.cs" />
+    <Compile Include="Utilities\ReverseLineReader.cs" />
+    <Compile Include="Utilities\SecurityHelper.cs" />
+    <Compile Include="Utilities\SensorCommon.cs" />
+    <Compile Include="Utilities\SerializationHelper.cs" />
+    <Compile Include="Utilities\StreamUtil.cs" />
+    <Compile Include="Utilities\TypeParser.cs" />
+    <Compile Include="Utilities\TypesHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

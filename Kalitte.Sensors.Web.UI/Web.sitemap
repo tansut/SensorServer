@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" url="~/Pages/default.aspx" description="1:House">
+    <siteMapNode title="Sensor Management" description="100" >
+      <siteMapNode title="Providers" description="102:BulletStart" url="~/Pages/SensorProviders/Management.aspx"  />
+      <siteMapNode title="Sensors" description="101:BulletStart" url="~/Pages/Sensors/Management.aspx"  />
+      <siteMapNode title="Logical Sensors" description="102:BulletStart" url="~/Pages/LogicalSensors/Management.aspx"  />
+    </siteMapNode>
+    <siteMapNode title="Event Management" description="200">
+      <siteMapNode title="Event Modules" description="201:BulletStart" url="~/Pages/EventModules/Management.aspx"  />
+      <siteMapNode title="Processors" description="201:BulletStart" url="~/Pages/Processors/Management.aspx"  />
+      <siteMapNode title="Dispatchers" description="201:BulletStart" url="~/Pages/Dispatchers/Management.aspx"  />
+    </siteMapNode>
+    <siteMapNode title="Server Management" description="300">
+      <siteMapNode title="Server Analysis" description="301:BulletStart" url="~/Pages/Server/WatchManagement/default.aspx"  />
+      <siteMapNode title="Event Log" description="302:BulletStart" url="~/Pages/Server/LogManagement.aspx"  />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

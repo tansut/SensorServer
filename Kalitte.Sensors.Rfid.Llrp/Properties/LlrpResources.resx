@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessingModuleFailed" xml:space="preserve">
+    <value>Failed to retrieve the properties of the device.  Ensure that there is a module on the device and that another connection is not opened to the module from an application running on the device. The error is {0}.</value>
+  </data>
+  <data name="AccessTriggerDescription" xml:space="preserve">
+    <value>This property sets up the triggers for the reader to send the access results to the client. In addition, the client can enable or disable reporting of reader operation specification details in the access results.</value>
+  </data>
+  <data name="AddingAccessSpecFailed" xml:space="preserve">
+    <value>Adding the access specification failed. See the error message for more details.</value>
+  </data>
+  <data name="AddROSpecFailedDescription" xml:space="preserve">
+    <value>Adding the reader operation specification failed on the device. See the error message for more details.</value>
+  </data>
+  <data name="AgentIPDescription" xml:space="preserve">
+    <value>IP address at which the LLRP agent is listening</value>
+  </data>
+  <data name="AISpecEndEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on the AI Spec end.</value>
+  </data>
+  <data name="AISpecEndWithSingulationEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on the AI Spec end with singulation detail.</value>
+  </data>
+  <data name="AntennaEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on antenna connect and disconnect.</value>
+  </data>
+  <data name="AntennaGainDescription" xml:space="preserve">
+    <value>Gain of the antenna in dBI*100.</value>
+  </data>
+  <data name="AntennaSensitivityMaximumIndexDescription" xml:space="preserve">
+    <value>Antenna sensitivity maximum value as an index into the receive sensitivity table.</value>
+  </data>
+  <data name="AntennaSensitivityMinimumIndexDescription" xml:space="preserve">
+    <value>Antenna sensitivity minimum value as an index into the receive sensitivity table.</value>
+  </data>
+  <data name="ApplyPropertyFailedDueToLotOfProperties" xml:space="preserve">
+    <value>Could not set the property. The custom LLRP parameter could not be constructed for all the properties due to length constraints. Apply fewer properties at a time.</value>
+  </data>
+  <data name="AsynchronousResultCompleteCalledTwice" xml:space="preserve">
+    <value>Cannot call Complete twice.</value>
+  </data>
+  <data name="BatchConfigurationDescription" xml:space="preserve">
+    <value>The properties BatchSize and BatchTimeout can be used to specify how BizTalk RFID Mobile forwards events to BizTalk RFID Server.  The events are forwarded when the number of events accumulated on the device reaches BatchSize, or when the time elapsed since the last forward exceeds BatchTimeout, whichever is earlier.</value>
+  </data>
+  <data name="BothEPCDataPresent" xml:space="preserve">
+    <value>Tag report has both fixed and variable EPC data. Tag report should have only one EPC data parameter.</value>
+  </data>
+  <data name="BothTimestampPresent" xml:space="preserve">
+    <value>Both time stamps are present. Specify only one time stamp parameter.</value>
+  </data>
+  <data name="BufferFillWarningEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on buffer fill.</value>
+  </data>
+  <data name="C1G2EnableCrcDescription" xml:space="preserve">
+    <value>Indicates if the CRC bit is part of the report in Class 1 Gen 2.</value>
+  </data>
+  <data name="C1G2EnablePCDescription" xml:space="preserve">
+    <value>Indicates if the PC bit is part of the report in Class 1 Gen 2.</value>
+  </data>
+  <data name="C1G2FilterNoAction" xml:space="preserve">
+    <value>At least one action should be defined in C1G2Filter.</value>
+  </data>
+  <data name="C1G2FiltersDescription" xml:space="preserve">
+    <value>Indicates filters present on the antenna.</value>
+  </data>
+  <data name="CanDoRFSurveyDescription" xml:space="preserve">
+    <value>Indicates if the device can do RF Survey.</value>
+  </data>
+  <data name="CanDOTagInventoryStateAwareSingulationDescription" xml:space="preserve">
+    <value>Indicates if the device can do Tag Inventory State aware singulation.</value>
+  </data>
+  <data name="CanReportBufferFillWarningDescription" xml:space="preserve">
+    <value>Indicates if the device can report buffer fill warning.</value>
+  </data>
+  <data name="CanSetAntennaPropertiesDescription" xml:space="preserve">
+    <value>Indicates if properties on the antenna can be set.</value>
+  </data>
+  <data name="CantChangeSpecificationAsExistingSpecificationCouldNotBeDeleted" xml:space="preserve">
+    <value>Could not modify the property because the notification specification on the device could not be removed. See the Event mode property error for more details.</value>
+  </data>
+  <data name="ChannelIndexDescription" xml:space="preserve">
+    <value>Index into the frequency table. For a hopping antenna, this value should be ignored.</value>
+  </data>
+  <data name="CleanupSpecsDescription" xml:space="preserve">
+    <value>If set to true, it deletes all the reader operation and access specifications on the device in a best-effort way. If the event mode is set to true, any inventory specifications specified by the user in the Notification group are added back to the device.</value>
+  </data>
+  <data name="ClientRequestOperationSpecTimeoutDescription" xml:space="preserve">
+    <value>Client Request Op Spec time-out.</value>
+  </data>
+  <data name="CollectionElementNull" xml:space="preserve">
+    <value>Element {0} is null in the collection of {1}. Specify non-null values in the collection.</value>
+  </data>
+  <data name="CommandCouldNotCompleteOnDesiredTags" xml:space="preserve">
+    <value>Command timed out. The command could complete the operation on {0} tag(s) whereas it was supposed to complete on {1} tag(s). To resolve the issue increase the value of the property {2} in the group {3} to increase the time allotted for the command.</value>
+  </data>
+  <data name="CommandExecutionFailedDescription" xml:space="preserve">
+    <value>Command execution failed. See the error message for more information.</value>
+  </data>
+  <data name="CommandIsNull" xml:space="preserve">
+    <value>Invalid command. Command is null. Specify a valid command.</value>
+  </data>
+  <data name="ConnectionAttemptEventStatusDescription" xml:space="preserve">
+    <value>Indicates the status of the connection attempt on the device.</value>
+  </data>
+  <data name="ConnectionAttemptEventTypeDescription" xml:space="preserve">
+    <value>Connection was established with the reader.</value>
+  </data>
+  <data name="ConnectionClosed" xml:space="preserve">
+    <value>No data on the stream. The connection has probably been closed. Try to connect to the device again.</value>
+  </data>
+  <data name="ConnectionRetryIntervalDescription" xml:space="preserve">
+    <value>Specifies the time interval, in milliseconds, that BizTalk RFID Mobile waits before attempting to reconnect to BizTalk RFID Server.</value>
+  </data>
+  <data name="ConnectionTimedout" xml:space="preserve">
+    <value>Connection attempt timed out. Did not receive a connection attempt event from the device within the stipulated time {0}.</value>
+  </data>
+  <data name="CountryCodeDescription" xml:space="preserve">
+    <value>Indicates the country code of the device operation.</value>
+  </data>
+  <data name="CustomMessage" xml:space="preserve">
+    <value>Custom Message</value>
+  </data>
+  <data name="CustomParameter" xml:space="preserve">
+    <value>Custom Parameter</value>
+  </data>
+  <data name="CustomParameterLengthExceeded" xml:space="preserve">
+    <value>Creating a custom parameter failed. A possible reason is that the parameter has exceeded the maximum allowed length of {0}. The error received is {1}.</value>
+  </data>
+  <data name="DecodingFailed" xml:space="preserve">
+    <value>Message decoding failed with decoding exception {0}</value>
+  </data>
+  <data name="DeleteNotificationSpecFailed" xml:space="preserve">
+    <value>Deleting the notification RO specification failed. See the error message for more information.</value>
+  </data>
+  <data name="DeletingAccessSpecFailed" xml:space="preserve">
+    <value>Deleting the access specification failed. See the error message for more information.</value>
+  </data>
+  <data name="DeletingROSpecFailed" xml:space="preserve">
+    <value>Deleting the reader operation specification failed. See the error message for more information.</value>
+  </data>
+  <data name="DeviceInitiatedConnectionDiscoveryHeartbeatDescription" xml:space="preserve">
+    <value>Interval, in seconds, in which the provider should raise the discovery message for devices that initiated a connection to the provider but are not being used by the RFID service.</value>
+  </data>
+  <data name="DeviceStateIsNotOpened" xml:space="preserve">
+    <value>Invalid operation. Device is not opened. Open the device before performing any operation on the device.</value>
+  </data>
+  <data name="EnableAccessSpecIdDescription" xml:space="preserve">
+    <value>Indicates if access specification ID is part of the report.</value>
+  </data>
+  <data name="EnableAntennaIdDescription" xml:space="preserve">
+    <value>Indicates if antenna ID is part of the report.</value>
+  </data>
+  <data name="EnableChannelIndexDescription" xml:space="preserve">
+    <value>Indicates if channel index is part of the report.</value>
+  </data>
+  <data name="EnableFirstSeenTimestampDescription" xml:space="preserve">
+    <value>Indicates if first seen time-stamp is part of the report.</value>
+  </data>
+  <data name="EnableInventoryParameterSpecIdDescription" xml:space="preserve">
+    <value>Indicates if inventory parameter specification ID is part of the report.</value>
+  </data>
+  <data name="EnableLastSeenTimestampDescription" xml:space="preserve">
+    <value>Indicates if last seen time-stamp is part of the report.</value>
+  </data>
+  <data name="EnablePeakRssiDescription" xml:space="preserve">
+    <value>Indicates if peak RSSI is part of the report.</value>
+  </data>
+  <data name="EnableROSpecFailedDescription" xml:space="preserve">
+    <value>Enabling the reader operation specification failed on the device. See the error message for more information.</value>
+  </data>
+  <data name="EnableROSpecIdDescription" xml:space="preserve">
+    <value>Indicates if RO Spec ID is part of the report.</value>
+  </data>
+  <data name="EnableSpecIndexDescription" xml:space="preserve">
+    <value>Indicates if Spec Index is part of the report</value>
+  </data>
+  <data name="EnableTagSeenCountDescription" xml:space="preserve">
+    <value>Indicates if tag-seen count is part of the report.</value>
+  </data>
+  <data name="EnablingAccessSpecFailed" xml:space="preserve">
+    <value>Enabling access specification failed. See the error message for more information.</value>
+  </data>
+  <data name="ErrorDescriptionToStringFooter" xml:space="preserve">
+    <value>&lt;/Error String&gt;</value>
+  </data>
+  <data name="ErrorDescriptionToStringHeader" xml:space="preserve">
+    <value>&lt;Error String&gt;</value>
+  </data>
+  <data name="ErrorDeviceIdNotAvailable" xml:space="preserve">
+    <value>Could not get the device ID of the device. Contact your hardware vendor for more information.</value>
+  </data>
+  <data name="ErrorDuringCreatingLlrpMessage" xml:space="preserve">
+    <value>Error occurred during construction of LLRP message. Resolve the issue {0} and try again.</value>
+  </data>
+  <data name="ErrorwhileBindingToListeningPort" xml:space="preserve">
+    <value>Provider could not listen on the specified port for incoming LLRP reader connections. See the inner exception for more details.</value>
+  </data>
+  <data name="ErrorWhileReceivingLlrpMessage" xml:space="preserve">
+    <value>Error while receiving LLRP message. See the inner exception for more details.</value>
+  </data>
+  <data name="ErrorWhileSendingLlrpMessage" xml:space="preserve">
+    <value>Error while sending LLRP message. See the inner exception for more details.</value>
+  </data>
+  <data name="FieldErrorToStringFooter" xml:space="preserve">
+    <value>&lt;/Field Error&gt;</value>
+  </data>
+  <data name="FieldErrorToStringHeader" xml:space="preserve">
+    <value>&lt;Field Error&gt;</value>
+  </data>
+  <data name="FieldNumberToStringFooter" xml:space="preserve">
+    <value>&lt;/Field Number&gt;</value>
+  </data>
+  <data name="FieldNumberToStringHeader" xml:space="preserve">
+    <value>&lt;Field Number&gt;</value>
+  </data>
+  <data name="FixedFrequencyTableDescription" xml:space="preserve">
+    <value>Frequency of the device when the device is not hopping.</value>
+  </data>
+  <data name="FrequencyHopTableDescription" xml:space="preserve">
+    <value>Frequencies of the device when the device is hopping across channels.</value>
+  </data>
+  <data name="GetPropertyGroupNameNotSupported" xml:space="preserve">
+    <value>Unsupported operation. Use the GetDevicePropertyMetadata call to get all the properties supported by the device and infer the supported group name from it.</value>
+  </data>
+  <data name="GetSourcesFailed" xml:space="preserve">
+    <value>Retrieving source names failed.</value>
+  </data>
+  <data name="GettingReaderCapabilitiesFailed" xml:space="preserve">
+    <value>Getting reader capabilities failed. See the inner message for more details.</value>
+  </data>
+  <data name="GettingReaderConfigurationFailed" xml:space="preserve">
+    <value>Getting reader configuration failed. See the inner message for more details.</value>
+  </data>
+  <data name="GpiEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on a GPI event.</value>
+  </data>
+  <data name="HasUtcClockCapabilityDescription" xml:space="preserve">
+    <value>Indicates if the device has UTC clock capability.</value>
+  </data>
+  <data name="HoldsEventsAndReportDescription" xml:space="preserve">
+    <value>Indicates if the device holds events and reports on reconnect.</value>
+  </data>
+  <data name="HoppingDescription" xml:space="preserve">
+    <value>Indicates if the device is hopping.</value>
+  </data>
+  <data name="HoppingEventDescription" xml:space="preserve">
+    <value>Indicates if the device generates a report on hopping to the next channel.</value>
+  </data>
+  <data name="HoppingEventHopTableIdDescription" xml:space="preserve">
+    <value>ID of the new frequency hop table.</value>
+  </data>
+  <data name="HoppingEventNextChannelIndexDescription" xml:space="preserve">
+    <value>One-based channel index of the next channel to which the device is going to change.</value>
+  </data>
+  <data name="HoppingEventTypeDescription" xml:space="preserve">
+    <value>Device has hopped from one frequency to another.</value>
+  </data>
+  <data name="HopTableIdDescription" xml:space="preserve">
+    <value>Hop Table ID</value>
+  </data>
+  <data name="InCompleteMessage" xml:space="preserve">
+    <value>Incomplete message received. Contact your hardware vendor if the problem persists.</value>
+  </data>
+  <data name="InCompleteMessageWithName" xml:space="preserve">
+    <value>Incomplete message {0}. Contact your hardware vendor if the problem persists.</value>
+  </data>
+  <data name="InCompleteParameter" xml:space="preserve">
+    <value>Incomplete parameter {0} received. Contact your hardware vendor if the problem persists.</value>
+  </data>
+  <data name="Infinite" xml:space="preserve">
+    <value>Infinite</value>
+  </data>
+  <data name="InvalidAISpecStopTriggerNonNullGpiAndTag" xml:space="preserve">
+    <value>Invalid AI Spec stop trigger. It has both GPI and tag observation triggers. Specify only one stop trigger.</value>
+  </data>
+  <data name="InvalidAntennaName" xml:space="preserve">
+    <value>Antenna name is invalid. Specify a valid antenna name.</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Invalid code. If the code is specified, it should be of length 4.</value>
+  </data>
+  <data name="InvalidEnum" xml:space="preserve">
+    <value>Invalid value {0} for type {1}. Specify a valid value of the type.</value>
+  </data>
+  <data name="InvalidKey" xml:space="preserve">
+    <value>Property key is invalid or is not supported by the device. Specify a supported property of the device.</value>
+  </data>
+  <data name="InvalidMessageHeaderReceived" xml:space="preserve">
+    <value>Message header is corrupted. Length of the message is invalid. Contact your hardware vendor if the problem persists.</value>
+  </data>
+  <data name="InvalidMessageOrParameter" xml:space="preserve">
+    <value>Invalid message or parameter {0}. Contact your hardware vendor if the problem persists.</value>
+  </data>
+  <data name="InvalidMessageVersion" xml:space="preserve">
+    <value>Message version {0} is not supported. This provider works with messages whose version is 1.</value>
+  </data>
+  <data name="InvalidPortOutputValue" xml:space="preserve">
+    <value>Port output value should be a byte array of length 1 with value of either 0 or 1. 0 indicates that the port will be set at low state; 1 indicates that the port will be set at high state.</value>
+  </data>
+  <data name="InvalidReadTagOffset" xml:space="preserve">
+    <value>Offset is invalid for Class 1 Gen 2 read operation. Offset should be non-negative and less than 131070.</value>
+  </data>
+  <data name="InvalidROSpecId" xml:space="preserve">
+    <value>The specified ROSpec identifier is invalid because there is no matching ROSpec on the device. Specify a valid ROSpec identifier.</value>
+  </data>
+  <data name="InvalidROSpecStartTriggerNonNullGpiAndPeriodic" xml:space="preserve">
+    <value>Invalid RO-Spec start trigger. It has both GPI and periodic triggers. Specify only one trigger.</value>
+  </data>
+  <data name="InvalidROSpecStopTriggerNonNullGpi" xml:space="preserve">
+    <value>Invalid RO-Spec stop trigger. It has a GPI trigger when the trigger type is not a GPI type. Specify valid values for the trigger.</value>
+  </data>
+  <data name="InvalidSchema" xml:space="preserve">
+    <value>Invalid schema format. See the inner exception for more information.</value>
+  </data>
+  <data name="InvalidSeekOrigin" xml:space="preserve">
+    <value>Only Begin is supported for Seek Origin.</value>
+  </data>
+  <data name="InvalidStateForDisableROSpec" xml:space="preserve">
+    <value>The specified ROSpec is already in the disabled state.</value>
+  </data>
+  <data name="InvalidStateForEnableROSpec" xml:space="preserve">
+    <value>The specified ROSpec is already in one of the enabled states.</value>
+  </data>
+  <data name="InvalidStateForStartROSpec" xml:space="preserve">
+    <value>The specified ROSpec cannot be started because it is already in the active state or is currently disabled.</value>
+  </data>
+  <data name="InvalidStateForStopROSpec" xml:space="preserve">
+    <value>The specified ROSpec cannot be stopped because it is already in the inactive state or is currently disabled.</value>
+  </data>
+  <data name="InvalidTagReadLength" xml:space="preserve">
+    <value>Count is invalid for Class 1 Gen 2 air protocol. Count should be between 0 and 131070.</value>
+  </data>
+  <data name="InvalidWriteIdCommand" xml:space="preserve">
+    <value>Invalid write ID command. Command has not set any of the parameters tag ID, new access code, or new kill code. Specify at least one parameter.</value>
+  </data>
+  <data name="InvalidWriteTagData" xml:space="preserve">
+    <value>Tag data should be of even length.</value>
+  </data>
+  <data name="InvalidWriteTagOffset" xml:space="preserve">
+    <value>Offset is invalid for Class 1 Gen 2 write operation. Offset should be non-negative, at a word boundary, and less than 131070.</value>
+  </data>
+  <data name="InventoryAccessSpecDescription" xml:space="preserve">
+    <value>Access specification that will be added to the device when the device is in inventory mode.</value>
+  </data>
+  <data name="InventoryROSpecDescription" xml:space="preserve">
+    <value>RO specification that will be executed when the device is in notification mode.</value>
+  </data>
+  <data name="InventoryROSpecNull" xml:space="preserve">
+    <value>Inventory RO-Spec cannot be null. Specify a non-null value for the reader operation specification.</value>
+  </data>
+  <data name="KeepAliveIntervalTooLow" xml:space="preserve">
+    <value>The supplied KeepAlive interval is lower than the minimum supported value.  Specify a KeepAlive interval greater than or equal to {0}.</value>
+  </data>
+  <data name="ListenerPortDescription" xml:space="preserve">
+    <value>The port on which the agent listen for inbound connections.</value>
+  </data>
+  <data name="LlrpMessageCommandKey" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="LlrpMessageCommandKeyDescription" xml:space="preserve">
+    <value>Message in binary encoded format.</value>
+  </data>
+  <data name="LlrpMessageResponseKey" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="LlrpMessageResponseKeyDescription" xml:space="preserve">
+    <value>Contains the LLRP message response in binary encoded format.</value>
+  </data>
+  <data name="LlrpMessageTimeoutDescription" xml:space="preserve">
+    <value>Length of time the provider will wait for the response from the device for an LLRP message. The time-out is specified in milliseconds.</value>
+  </data>
+  <data name="LlrpMessageVendordefinedCommand" xml:space="preserve">
+    <value>Execute LLRP Messages command.</value>
+  </data>
+  <data name="LlrpMessageVendordefinedCommandDescription" xml:space="preserve">
+    <value>Executes the LLRP message.</value>
+  </data>
+  <data name="LlrpMessageVendordefinedResponseDescription" xml:space="preserve">
+    <value>LLRP message response.</value>
+  </data>
+  <data name="LlrpParameterTypeToStringFooter" xml:space="preserve">
+    <value>&lt;/Parameter Type&gt;</value>
+  </data>
+  <data name="LlrpParameterTypeToStringHeader" xml:space="preserve">
+    <value>&lt;Parameter Type&gt;</value>
+  </data>
+  <data name="LlrpResponseTimeout" xml:space="preserve">
+    <value>Device did not reply within the stipulated time {0}. Consider increasing the LLRP Message Timeout property if the problem persists.</value>
+  </data>
+  <data name="LlrpSourceIdDescription" xml:space="preserve">
+    <value>ID of the source as referred to in the LLRP.</value>
+  </data>
+  <data name="LlrpStatusToStringFooter" xml:space="preserve">
+    <value>&lt;/LLRP Status&gt;</value>
+  </data>
+  <data name="LlrpStatusToStringHeader" xml:space="preserve">
+    <value>&lt;LLRP Status&gt;</value>
+  </data>
+  <data name="LlrpVersionDescription" xml:space="preserve">
+    <value>Indicates the version of the LLRP supported by the provider.</value>
+  </data>
+  <data name="LlrpVersionIsReadOnly" xml:space="preserve">
+    <value>LLRP Version property is a read-only property.</value>
+  </data>
+  <data name="MatchTimeoutDescription" xml:space="preserve">
+    <value>Indicates the time, in second, for which the provider waits for probe response from devices for a </value>
+  </data>
+  <data name="MaxAntennaSupportedDescription" xml:space="preserve">
+    <value>Maximum number of antennas supported by the device.</value>
+  </data>
+  <data name="MaximumAccessSpecDescription" xml:space="preserve">
+    <value>Maximum number of access specifications supported.</value>
+  </data>
+  <data name="MaximumInventoryPerAIDescription" xml:space="preserve">
+    <value>Maximum number of inventory specifications per AI.</value>
+  </data>
+  <data name="MaximumNumSelectFiltersPerQuery" xml:space="preserve">
+    <value>Maximum number of select filters per query. Zero indicates no limit.</value>
+  </data>
+  <data name="MaximumOperationSpecPerAccessSpecDescription" xml:space="preserve">
+    <value>Maximum number of Op Specs per Access Spec.</value>
+  </data>
+  <data name="MaximumPriorityLevelSupportedDescription" xml:space="preserve">
+    <value>Maximum priority level supported for the ROSpec.</value>
+  </data>
+  <data name="MaximumROSpecDescription" xml:space="preserve">
+    <value>Maximum number of ROSpecs supported.</value>
+  </data>
+  <data name="MaximumSpecsPerROSpecDescription" xml:space="preserve">
+    <value>Maximum number of specs per ROSpec.</value>
+  </data>
+  <data name="MessageEncoderFactoryIsNull" xml:space="preserve">
+    <value>Message encoder factory is null. Specify a valid message encoder factory.</value>
+  </data>
+  <data name="MessageEncoderIsNull" xml:space="preserve">
+    <value>Message encoder is null. Specify a valid message encoder.</value>
+  </data>
+  <data name="MessageLengthExceeded" xml:space="preserve">
+    <value>Message length exceeds maximum allowed length of {0}. Message length should not exceed 4 GB.</value>
+  </data>
+  <data name="MismatchInCustomMessageSubType" xml:space="preserve">
+    <value>Expected custom message type {0} but got type {1}. Specify a valid message type.</value>
+  </data>
+  <data name="MismatchInCustomSubtype" xml:space="preserve">
+    <value>Expected type for custom parameter is {0} but received {1}. Specify a valid custom parameter type.</value>
+  </data>
+  <data name="MismatchInIanaNumber" xml:space="preserve">
+    <value>Expected a parameter from vendor {0} but received from {1}. Specify a valid International Assigned Number.</value>
+  </data>
+  <data name="MissingParameterInMessage" xml:space="preserve">
+    <value>Missing parameter {0} in message {1}. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="ModeIndexDescription" xml:space="preserve">
+    <value>Index into RF Mode table.</value>
+  </data>
+  <data name="ModelNameDescription" xml:space="preserve">
+    <value>Model name of the device.</value>
+  </data>
+  <data name="MultipleNicWarningEventMessage" xml:space="preserve">
+    <value>Discovery of devices using WS-Discovery is not turned on by default in a multiple network adapter configuration. Please refer to BizTalk RFID documentation to enable WS-Discovery.</value>
+  </data>
+  <data name="NameDescription" xml:space="preserve">
+    <value>Name of the device or source</value>
+  </data>
+  <data name="NoEPCDataFound" xml:space="preserve">
+    <value>No EPC data found in tag report data. Device has no EPC data. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="NoModulePresent" xml:space="preserve">
+    <value>No module is available to establish a connection.</value>
+  </data>
+  <data name="NoneTimestampPresent" xml:space="preserve">
+    <value>None of the time stamp is present. Device has no time stamp information. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="NoNicWarningEventMessage" xml:space="preserve">
+    <value>LLRP provider has currently disabled discovery of devices as there were no operational network adapters during its startup. To resolve this, ensure that the computer has a minimum of one operational network adapter with UDP multicast support, and then restart the LLRP provider.</value>
+  </data>
+  <data name="NoOrIncompleteTagTypeInCustomParameter" xml:space="preserve">
+    <value>Custom parameter has no tag type information or invalid tag type information. Parameter should have the TagType as a serialized UTF-8 string.</value>
+  </data>
+  <data name="NoROSpecPresent" xml:space="preserve">
+    <value>There is no ROSpec on the device. Add an ROSpec and retry the operation.</value>
+  </data>
+  <data name="NotSupportedConnectionType" xml:space="preserve">
+    <value>Provider supports only TCP transport settings.</value>
+  </data>
+  <data name="NotsupportedOperation" xml:space="preserve">
+    <value>Not a supported operation.</value>
+  </data>
+  <data name="NullResponseForMessage" xml:space="preserve">
+    <value>Received null response for message {0}. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="NumberOfGpiDescription" xml:space="preserve">
+    <value>Number of General Purpose Input.</value>
+  </data>
+  <data name="NumberOfGpoDescription" xml:space="preserve">
+    <value>Number of General Purpose Output.</value>
+  </data>
+  <data name="NumberOfTagReportDataDescription" xml:space="preserve">
+    <value>Number of tags before the device will report tags to the client. If zero, then the device will not report unless triggered by some other trigger.</value>
+  </data>
+  <data name="ParameterErrorToStringFooter" xml:space="preserve">
+    <value>&lt;/Parameter Error&gt;</value>
+  </data>
+  <data name="ParameterErrorToStringHeader" xml:space="preserve">
+    <value>&lt;Parameter Error&gt;</value>
+  </data>
+  <data name="ParameterLengthExceeded" xml:space="preserve">
+    <value>Parameter length exceeds maximum allowed length of {0}.</value>
+  </data>
+  <data name="PortInputValueDescription" xml:space="preserve">
+    <value>Value of the general-purpose input port. Value is one byte in length. Value of zero indicates that the port is at low or unknown state. Value of one indicates that the port is at high state.</value>
+  </data>
+  <data name="PortOutputValueDescription" xml:space="preserve">
+    <value>Value of the general-purpose output port. Value should be one byte in length. Value of zero indicates that the port will be set at low state. Value of one indicates that the port will be set at high state.</value>
+  </data>
+  <data name="PropertyNotSupportedOrDependentPropertyMissing" xml:space="preserve">
+    <value>Property is not supported or one or more dependent properties are missing.</value>
+  </data>
+  <data name="PropertyOfInvalidType" xml:space="preserve">
+    <value>The value of the property {0} is not of the expected type {1}. Provide a value of the correct type.</value>
+  </data>
+  <data name="PropertyProfileName" xml:space="preserve">
+    <value>LLRP Device Profile</value>
+  </data>
+  <data name="PropertyValueLessThanMinValue" xml:space="preserve">
+    <value>The value of the property {0} is less than the minimum allowed value {1}. Provide a value in the correct range.</value>
+  </data>
+  <data name="ProviderDescription" xml:space="preserve">
+    <value>Provider for LLRP devices</value>
+  </data>
+  <data name="ProviderId" xml:space="preserve">
+    <value>Microsoft BizTalk RFID LLRP Provider</value>
+  </data>
+  <data name="ProviderListeningPortDescription" xml:space="preserve">
+    <value>Provider listens on this port for reader-initiated connections.</value>
+  </data>
+  <data name="ProviderLlrpMessageTimeoutDescription" xml:space="preserve">
+    <value>Time in milliseconds for which the provider waits for a response from the device during initial handshake to the device. After the device is connected, the provider uses the time specified in the device property "LLRP Message timeout" in the "Management" group.</value>
+  </data>
+  <data name="ProviderProfileName" xml:space="preserve">
+    <value>Microsoft BizTalk RFID LLRP Provider</value>
+  </data>
+  <data name="ReaderExceptionEventAccessSpecDescription" xml:space="preserve">
+    <value>ID of the access specification that was running when the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventAntennaNameDescription" xml:space="preserve">
+    <value>Name of the antenna on which the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventDescription" xml:space="preserve">
+    <value>Indicates if device generates a report on a reader exception.</value>
+  </data>
+  <data name="ReaderExceptionEventInventoryParameterSpecIdDescription" xml:space="preserve">
+    <value>ID of the inventory parameter specification that was running when the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventMessageDescription" xml:space="preserve">
+    <value>Error message.</value>
+  </data>
+  <data name="ReaderExceptionEventOperationSpecDescription" xml:space="preserve">
+    <value>ID of the operation specification that was running when the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventROSpecIdDescription" xml:space="preserve">
+    <value>ID of the reader operation specification that was running when the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventSpecIndexDescription" xml:space="preserve">
+    <value>ID of the specification index that was running when the exception occurred.</value>
+  </data>
+  <data name="ReaderExceptionEventTypeDescription" xml:space="preserve">
+    <value>Indicates an exception has occurred on the device.</value>
+  </data>
+  <data name="ReaderInitiatedConnectionStoppedDescription" xml:space="preserve">
+    <value>LLRP provider encountered an error. Reader-initiated connections are no longer accepted. The reason is {0}. Restart the provider to fix the issue.</value>
+  </data>
+  <data name="ReceiverSensitivityIndexDescription" xml:space="preserve">
+    <value>Receive sensitivity index</value>
+  </data>
+  <data name="ReceiveSensitivityTableDescription" xml:space="preserve">
+    <value>Receive sensitivity table</value>
+  </data>
+  <data name="ReportBufferLevelWarningEventDescription" xml:space="preserve">
+    <value>Buffer level at the device is approaching full.</value>
+  </data>
+  <data name="ReportBufferOverflowErrorEventDescription" xml:space="preserve">
+    <value>Buffer overflow in the device.</value>
+  </data>
+  <data name="ResetConfigurationToFactorySettingsCommandNotSupportedError" xml:space="preserve">
+    <value>Unsupported command. Set the property "{0}" in the group "{1}" to reset the device to factory settings.</value>
+  </data>
+  <data name="ResetToFactoryDefaultDescription" xml:space="preserve">
+    <value>Reader will set all configurable values to factory defaults before applying the remaining properties.</value>
+  </data>
+  <data name="RFModeTableDescription" xml:space="preserve">
+    <value>RF mode tables for various air protocols.</value>
+  </data>
+  <data name="RFSurveyEventDescription" xml:space="preserve">
+    <value>Indicates if device generates a report on RF Survey start and end.</value>
+  </data>
+  <data name="RFSurveyEventROSpecIdDescription" xml:space="preserve">
+    <value>ID of the reader operation specification that resulted in the event.</value>
+  </data>
+  <data name="RFSurveyEventSpecIndexDescription" xml:space="preserve">
+    <value>ID of the specification index that resulted in the event.</value>
+  </data>
+  <data name="RFSurveyEventTypeDescription" xml:space="preserve">
+    <value>Indicates the type of the survey event.</value>
+  </data>
+  <data name="RFSurveyNotificationEventDescription" xml:space="preserve">
+    <value>Indicates that the RF survey has started or completed.</value>
+  </data>
+  <data name="RFSurveyReportEventDescription" xml:space="preserve">
+    <value>Report of the RF survey.</value>
+  </data>
+  <data name="RFSurveyReportFrequencyRssiDescription" xml:space="preserve">
+    <value>Serialized string of collection of "FrequencyRssiLevelEntry" class.</value>
+  </data>
+  <data name="RFSurveyReportROSpecIdDescription" xml:space="preserve">
+    <value>ID of the reader operation specification that generated the report.</value>
+  </data>
+  <data name="RFSurveyReportSpecIndexDescription" xml:space="preserve">
+    <value>ID of the spec index that generated the report.</value>
+  </data>
+  <data name="ROSpecAlreadyPresent" xml:space="preserve">
+    <value>An ROSpec is already present. If you want to add a new ROSpec, delete the existing ROSpec and try again.</value>
+  </data>
+  <data name="ROSpecEventDescription" xml:space="preserve">
+    <value>Indicates if device generates a report on RO start/end/preempt.</value>
+  </data>
+  <data name="ROSpecNoSpec" xml:space="preserve">
+    <value>At least one spec should be defined in ROSpec. Specify at least one inventory, RF survey, or custom parameter.</value>
+  </data>
+  <data name="ROTriggerDescription" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="RssiValidValue" xml:space="preserve">
+    <value>Reader signal strength indicator should be between -128 and 127.</value>
+  </data>
+  <data name="SendKeepaliveDescription" xml:space="preserve">
+    <value>Indicates if the device should send keep-alive messages periodically.</value>
+  </data>
+  <data name="SessionDescription" xml:space="preserve">
+    <value>This is the C1G2 session number that the tags use to update the inventory state upon successful singulation.</value>
+  </data>
+  <data name="SetPropertyFailedDescription" xml:space="preserve">
+    <value>Could not apply one or more properties on the device. See the inner exception for more details.</value>
+  </data>
+  <data name="SettingConfigurationFailed" xml:space="preserve">
+    <value>An error was encountered while attempting to apply the properties. The error is: {0}.</value>
+  </data>
+  <data name="SettingInputAndOutputProfilesTogether" xml:space="preserve">
+    <value>The property could not be applied because it specifies both input port profile and output port profile for the same source. Specify the input and output profiles separately.</value>
+  </data>
+  <data name="SettingUnsupportedParameter" xml:space="preserve">
+    <value>Setting the parameter {0} is not supported. Remove the parameter and try again.</value>
+  </data>
+  <data name="StateDescription" xml:space="preserve">
+    <value>Indicates state of the reader.</value>
+  </data>
+  <data name="StatusCodeToStringFooter" xml:space="preserve">
+    <value>&lt;/Error Code&gt;</value>
+  </data>
+  <data name="StatusCodeToStringHeader" xml:space="preserve">
+    <value>&lt;Error Code&gt;</value>
+  </data>
+  <data name="SuccessStatusString" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="SupportsBlockEraseDescription" xml:space="preserve">
+    <value>Indicates if the device supports block erase.</value>
+  </data>
+  <data name="SupportsBlockWriteDescription" xml:space="preserve">
+    <value>Indicates if the device supports block write.</value>
+  </data>
+  <data name="SupportsClientOperationSpecDescription" xml:space="preserve">
+    <value>Indicates if the device supports Client Request Operation Spec.</value>
+  </data>
+  <data name="SupportsEventAndReportHoldingDescription" xml:space="preserve">
+    <value>Indicates if the device supports event and report holding.</value>
+  </data>
+  <data name="SynchronousCommandInventoryDurationDescription" xml:space="preserve">
+    <value>Duration for which inventory is carried during a synchronous command. This time is in milliseconds.</value>
+  </data>
+  <data name="SynchronousCommandOperationCountDescription" xml:space="preserve">
+    <value>Indicates the maximum number of tags on which the synchronous operation will be carried out before the command completes. A value of zero indicates, no limit on the count of tags on which the command can operate. This value is used for lock, un-lock, kill, write tag ID, write tag data and write partial tag data command.</value>
+  </data>
+  <data name="TagDataNullOrEmpty" xml:space="preserve">
+    <value>Tag data is empty. Specify some data in the tag.</value>
+  </data>
+  <data name="TagDataSelectorUnInitialized" xml:space="preserve">
+    <value>Tag data selector is not initialized. Specify a tag data selector with some fields set.</value>
+  </data>
+  <data name="TagInventoryStateAwareDescription" xml:space="preserve">
+    <value>True indicates that the client is managing the tag states during an inventory operation.</value>
+  </data>
+  <data name="TagInventoryStateAwareSingulationActionSLFlagDescription" xml:space="preserve">
+    <value>This is used if the TagInventoryStateAware flag is set to true in the InventoryParameterSpec. This is the state of the SL flag in the tag. Only tags that match this tag state participate in the inventory round. If the Ignore value is specified, the reader ignores this field, and the reader implementation must determine the value used in the inventory round.</value>
+  </data>
+  <data name="TagInventoryStateAwareSingulationActionStateDescription" xml:space="preserve">
+    <value>This is used if the TagInventoryStateAware flag is set to true in the InventoryParameterSpec. This is the inventoried state of the target tag population in the selected session. Only tags that match this session state participate in the inventory round. If the Ignore value is specified, the reader ignores this field, and the reader implementation must determine the value used in the inventory round.</value>
+  </data>
+  <data name="TagMaskAndDataLengthDoesNotMatch" xml:space="preserve">
+    <value>Mask length and data length does not match. Specify data and mask of the same length.</value>
+  </data>
+  <data name="TagPopulationDescription" xml:space="preserve">
+    <value>This is the expected tag population in the field of view of the antenna.</value>
+  </data>
+  <data name="TagTransitTimeDescription" xml:space="preserve">
+    <value>This is the measure of expected tag mobility in the field of view of the antenna where this inventory operation is running.</value>
+  </data>
+  <data name="TariDescription" xml:space="preserve">
+    <value>Value of Tari to use for this mode, specified in nanoseconds. This value is specified if the selected mode has a Tari range. If the selected mode has a range, and the Tari value is set to zero, the reader implementation picks up any Tari value within the range. If the selected mode has a range, and the specified Tari value is out of that range and is not set to zero, an error message is generated.</value>
+  </data>
+  <data name="TcpClientNotConnected" xml:space="preserve">
+    <value>TCP client should be connected. Ensure that the TCP client is connected.</value>
+  </data>
+  <data name="TcpKeepAliveTimeDescription" xml:space="preserve">
+    <value>Time in milliseconds after which a keep-alive message is sent to the device if there is no activity on the connection. Changes in this value will be effective only for new device connections.</value>
+  </data>
+  <data name="TimeIntervalDescription" xml:space="preserve">
+    <value>Interval during which the message should be sent.</value>
+  </data>
+  <data name="TransmitPowerIndexDescription" xml:space="preserve">
+    <value>Index into the transmit power table.</value>
+  </data>
+  <data name="TransmitPowerTableDescription" xml:space="preserve">
+    <value>Transmit power table of the device.</value>
+  </data>
+  <data name="UnexpectedMessageReceived" xml:space="preserve">
+    <value>Received a {0} message when expecting a {1} message.</value>
+  </data>
+  <data name="UnknownLlrpMessage" xml:space="preserve">
+    <value>Unknown message {0} in the command. Specify a valid response.</value>
+  </data>
+  <data name="UnKnownTVParameter" xml:space="preserve">
+    <value>Unknown TV parameter {0}. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="UnMatchedMessageType" xml:space="preserve">
+    <value>Expected message type is {0}; current type is {1}. If the problem persists contact your hardware vendor.</value>
+  </data>
+  <data name="UnsupportedCommand" xml:space="preserve">
+    <value>Unsupported command. This operation is not supported by the provider.</value>
+  </data>
+  <data name="UnsupportedMessageAtAgent" xml:space="preserve">
+    <value>The received message of type {0} is not supported.</value>
+  </data>
+  <data name="UnsupportedProperty" xml:space="preserve">
+    <value>Unsupported property {0}. Specify a supported property.</value>
+  </data>
+  <data name="UnsupportedValueForParameter" xml:space="preserve">
+    <value>The value supplied for the parameter {0} is not supported. Change the value and try again.</value>
+  </data>
+  <data name="VendorDefinedCommandDoesNotContainMessage" xml:space="preserve">
+    <value>Command does not contain any LLRP message. Specify a message as part of the command. Use the method on the message to create a command.</value>
+  </data>
+  <data name="VendorDefinedCommandDoesNotContainMessageResponse" xml:space="preserve">
+    <value>Command does not contain a response. Specify a command that contains a valid response.</value>
+  </data>
+  <data name="VendorDefinedMessageNotInValidFormat" xml:space="preserve">
+    <value>LLRP message is not in a valid format. Expected type is {0} but current type is {1}. Specify a command with a valid format. If the problem persists contact your hardware vendor.</value>
+  </data>
+</root>

@@ -1,0 +1,51 @@
+namespace Kalitte.Sensors.Rfid.Llrp.Core
+{
+    using System;
+
+    public enum LlrpMessageType
+    {
+        AddAccessSpec = 40,
+        AddAccessSpecResponse = 50,
+        AddROSpec = 20,
+        AddROSpecResponse = 30,
+        ClientRequestOP = 0x2d,
+        ClientRequestOPResponse = 0x37,
+        CloseConnection = 14,
+        CloseConnectionResponse = 4,
+        CustomMessage = 0x3ff,
+        DeleteAccessSpec = 0x29,
+        DeleteAccessSpecResponse = 0x33,
+        DeleteROSpec = 0x15,
+        DeleteROSpecResponse = 0x1f,
+        DisableAccessSpec = 0x2b,
+        DisableAccessSpecResponse = 0x35,
+        DisableROSpec = 0x19,
+        DisableROSpecResponse = 0x23,
+        EnableAccessSpec = 0x2a,
+        EnableAccessSpecResponse = 0x34,
+        EnableEventsAndReports = 0x40,
+        EnableROSpec = 0x18,
+        EnableROSpecResponse = 0x22,
+        ErrorMessage = 100,
+        GetAccessSpec = 0x2c,
+        GetAccessSpecResponse = 0x36,
+        GetReaderCapabilities = 1,
+        GetReaderCapabilitiesResponse = 11,
+        GetReaderConfig = 2,
+        GetReaderConfigResponse = 12,
+        GetReport = 60,
+        GetROSpecs = 0x1a,
+        GetROSpecsResponse = 0x24,
+        KeepAlive = 0x3e,
+        KeepAliveAcknowledgement = 0x48,
+        None = 0,
+        ReaderEventNotification = 0x3f,
+        ROAccessReport = 0x3d,
+        SetReaderConfig = 3,
+        SetReaderConfigResponse = 13,
+        StartROSpec = 0x16,
+        StartROSpecResponse = 0x20,
+        StopROSpec = 0x17,
+        StopROSpecResponse = 0x21
+    }
+}

@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KalitteSensorServerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="KalitteSensorServerModelStoreContainer">
+          <EntitySet Name="Dispatcher" EntityType="KalitteSensorServerModel.Store.Dispatcher" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventModule" EntityType="KalitteSensorServerModel.Store.EventModule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventProcessor" EntityType="KalitteSensorServerModel.Store.EventProcessor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventProcessorDispatcherBinding" EntityType="KalitteSensorServerModel.Store.EventProcessorDispatcherBinding" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventProcessorLogicalSensorBinding" EntityType="KalitteSensorServerModel.Store.EventProcessorLogicalSensorBinding" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EventProcessorModuleBinding" EntityType="KalitteSensorServerModel.Store.EventProcessorModuleBinding" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LogicalSensor" EntityType="KalitteSensorServerModel.Store.LogicalSensor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LogicalSensorBinding" EntityType="KalitteSensorServerModel.Store.LogicalSensorBinding" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SensorDevice" EntityType="KalitteSensorServerModel.Store.SensorDevice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SensorProvider" EntityType="KalitteSensorServerModel.Store.SensorProvider" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_EventProcessorDispatcherBinding_Dispatcher" Association="KalitteSensorServerModel.Store.FK_EventProcessorDispatcherBinding_Dispatcher">
+            <End Role="Dispatcher" EntitySet="Dispatcher" />
+            <End Role="EventProcessorDispatcherBinding" EntitySet="EventProcessorDispatcherBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorDispatcherBinding_EventProcessor" Association="KalitteSensorServerModel.Store.FK_EventProcessorDispatcherBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorDispatcherBinding" EntitySet="EventProcessorDispatcherBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorLogicalSensorBinding_EventProcessor" Association="KalitteSensorServerModel.Store.FK_EventProcessorLogicalSensorBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorLogicalSensorBinding" EntitySet="EventProcessorLogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorLogicalSensorBinding_LogicalSensor" Association="KalitteSensorServerModel.Store.FK_EventProcessorLogicalSensorBinding_LogicalSensor">
+            <End Role="LogicalSensor" EntitySet="LogicalSensor" />
+            <End Role="EventProcessorLogicalSensorBinding" EntitySet="EventProcessorLogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorModuleBinding_EventModule" Association="KalitteSensorServerModel.Store.FK_EventProcessorModuleBinding_EventModule">
+            <End Role="EventModule" EntitySet="EventModule" />
+            <End Role="EventProcessorModuleBinding" EntitySet="EventProcessorModuleBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorModuleBinding_EventProcessor" Association="KalitteSensorServerModel.Store.FK_EventProcessorModuleBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorModuleBinding" EntitySet="EventProcessorModuleBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogicalSensorBinding_LogicalSensor" Association="KalitteSensorServerModel.Store.FK_LogicalSensorBinding_LogicalSensor">
+            <End Role="LogicalSensor" EntitySet="LogicalSensor" />
+            <End Role="LogicalSensorBinding" EntitySet="LogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogicalSensorBinding_SensorDevice" Association="KalitteSensorServerModel.Store.FK_LogicalSensorBinding_SensorDevice">
+            <End Role="SensorDevice" EntitySet="SensorDevice" />
+            <End Role="LogicalSensorBinding" EntitySet="LogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SensorDevice_SensorProvider" Association="KalitteSensorServerModel.Store.FK_SensorDevice_SensorProvider">
+            <End Role="SensorProvider" EntitySet="SensorProvider" />
+            <End Role="SensorDevice" EntitySet="SensorDevice" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Dispatcher">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="TypeQ" Type="ntext" Nullable="false" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EventModule">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="TypeQ" Type="ntext" Nullable="false" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EventProcessor">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EventProcessorDispatcherBinding">
+          <Key>
+            <PropertyRef Name="EventProcessorID" />
+            <PropertyRef Name="DispatcherID" />
+          </Key>
+          <Property Name="EventProcessorID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="DispatcherID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EventProcessorLogicalSensorBinding">
+          <Key>
+            <PropertyRef Name="EventProcessorID" />
+            <PropertyRef Name="LogicalSensorID" />
+          </Key>
+          <Property Name="EventProcessorID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="LogicalSensorID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EventProcessorModuleBinding">
+          <Key>
+            <PropertyRef Name="ProcessorID" />
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="ExecOrder" />
+          </Key>
+          <Property Name="ProcessorID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ModuleID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ExecOrder" Type="int" Nullable="false" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="LogicalSensor">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="LogicalSensorBinding">
+          <Key>
+            <PropertyRef Name="LogicalSensorID" />
+            <PropertyRef Name="SensorDeviceID" />
+            <PropertyRef Name="SensorSource" />
+          </Key>
+          <Property Name="LogicalSensorID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="SensorDeviceID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="SensorSource" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="SensorDevice">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="SensorId" Type="nvarchar" MaxLength="150" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="ProviderID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <EntityType Name="SensorProvider">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="TypeQ" Type="ntext" Nullable="false" />
+          <Property Name="Definition" Type="ntext" Nullable="false" />
+          <Property Name="Runtime" Type="ntext" Nullable="false" />
+          <Property Name="Description" Type="ntext" />
+        </EntityType>
+        <Association Name="FK_EventProcessorDispatcherBinding_Dispatcher">
+          <End Role="Dispatcher" Type="KalitteSensorServerModel.Store.Dispatcher" Multiplicity="1" />
+          <End Role="EventProcessorDispatcherBinding" Type="KalitteSensorServerModel.Store.EventProcessorDispatcherBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatcher">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorDispatcherBinding">
+              <PropertyRef Name="DispatcherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorDispatcherBinding_EventProcessor">
+          <End Role="EventProcessor" Type="KalitteSensorServerModel.Store.EventProcessor" Multiplicity="1" />
+          <End Role="EventProcessorDispatcherBinding" Type="KalitteSensorServerModel.Store.EventProcessorDispatcherBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorDispatcherBinding">
+              <PropertyRef Name="EventProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorLogicalSensorBinding_EventProcessor">
+          <End Role="EventProcessor" Type="KalitteSensorServerModel.Store.EventProcessor" Multiplicity="1" />
+          <End Role="EventProcessorLogicalSensorBinding" Type="KalitteSensorServerModel.Store.EventProcessorLogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorLogicalSensorBinding">
+              <PropertyRef Name="EventProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorLogicalSensorBinding_LogicalSensor">
+          <End Role="LogicalSensor" Type="KalitteSensorServerModel.Store.LogicalSensor" Multiplicity="1" />
+          <End Role="EventProcessorLogicalSensorBinding" Type="KalitteSensorServerModel.Store.EventProcessorLogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogicalSensor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorLogicalSensorBinding">
+              <PropertyRef Name="LogicalSensorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorModuleBinding_EventModule">
+          <End Role="EventModule" Type="KalitteSensorServerModel.Store.EventModule" Multiplicity="1" />
+          <End Role="EventProcessorModuleBinding" Type="KalitteSensorServerModel.Store.EventProcessorModuleBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventModule">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorModuleBinding">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorModuleBinding_EventProcessor">
+          <End Role="EventProcessor" Type="KalitteSensorServerModel.Store.EventProcessor" Multiplicity="1" />
+          <End Role="EventProcessorModuleBinding" Type="KalitteSensorServerModel.Store.EventProcessorModuleBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorModuleBinding">
+              <PropertyRef Name="ProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogicalSensorBinding_LogicalSensor">
+          <End Role="LogicalSensor" Type="KalitteSensorServerModel.Store.LogicalSensor" Multiplicity="1" />
+          <End Role="LogicalSensorBinding" Type="KalitteSensorServerModel.Store.LogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogicalSensor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="LogicalSensorBinding">
+              <PropertyRef Name="LogicalSensorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogicalSensorBinding_SensorDevice">
+          <End Role="SensorDevice" Type="KalitteSensorServerModel.Store.SensorDevice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LogicalSensorBinding" Type="KalitteSensorServerModel.Store.LogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SensorDevice">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="LogicalSensorBinding">
+              <PropertyRef Name="SensorDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SensorDevice_SensorProvider">
+          <End Role="SensorProvider" Type="KalitteSensorServerModel.Store.SensorProvider" Multiplicity="1" />
+          <End Role="SensorDevice" Type="KalitteSensorServerModel.Store.SensorDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SensorProvider">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="SensorDevice">
+              <PropertyRef Name="ProviderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KalitteSensorServerModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="KalitteSensorServerEntities">
+          <EntitySet Name="SensorProvider" EntityType="KalitteSensorServerModel.SensorProvider" />
+          <EntitySet Name="Dispatcher" EntityType="KalitteSensorServerModel.Dispatcher" />
+          <EntitySet Name="EventModule" EntityType="KalitteSensorServerModel.EventModule" />
+          <EntitySet Name="EventProcessor" EntityType="KalitteSensorServerModel.EventProcessor" />
+          <EntitySet Name="EventProcessorDispatcherBinding" EntityType="KalitteSensorServerModel.EventProcessorDispatcherBinding" />
+          <EntitySet Name="EventProcessorLogicalSensorBinding" EntityType="KalitteSensorServerModel.EventProcessorLogicalSensorBinding" />
+          <EntitySet Name="LogicalSensor" EntityType="KalitteSensorServerModel.LogicalSensor" />
+          <EntitySet Name="LogicalSensorBinding" EntityType="KalitteSensorServerModel.LogicalSensorBinding" />
+          <AssociationSet Name="FK_EventProcessorDispatcherBinding_Dispatcher" Association="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_Dispatcher">
+            <End Role="Dispatcher" EntitySet="Dispatcher" />
+            <End Role="EventProcessorDispatcherBinding" EntitySet="EventProcessorDispatcherBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorDispatcherBinding_EventProcessor" Association="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorDispatcherBinding" EntitySet="EventProcessorDispatcherBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorLogicalSensorBinding_EventProcessor" Association="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorLogicalSensorBinding" EntitySet="EventProcessorLogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorLogicalSensorBinding_LogicalSensor" Association="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_LogicalSensor">
+            <End Role="LogicalSensor" EntitySet="LogicalSensor" />
+            <End Role="EventProcessorLogicalSensorBinding" EntitySet="EventProcessorLogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogicalSensorBinding_LogicalSensor" Association="KalitteSensorServerModel.FK_LogicalSensorBinding_LogicalSensor">
+            <End Role="LogicalSensor" EntitySet="LogicalSensor" />
+            <End Role="LogicalSensorBinding" EntitySet="LogicalSensorBinding" />
+          </AssociationSet>
+          <EntitySet Name="EventProcessorModuleBinding" EntityType="KalitteSensorServerModel.EventProcessorModuleBinding" />
+          <AssociationSet Name="FK_EventProcessorModuleBinding_EventModule" Association="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventModule">
+            <End Role="EventModule" EntitySet="EventModule" />
+            <End Role="EventProcessorModuleBinding" EntitySet="EventProcessorModuleBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EventProcessorModuleBinding_EventProcessor" Association="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventProcessor">
+            <End Role="EventProcessor" EntitySet="EventProcessor" />
+            <End Role="EventProcessorModuleBinding" EntitySet="EventProcessorModuleBinding" />
+          </AssociationSet>
+          <EntitySet Name="SensorDevice" EntityType="KalitteSensorServerModel.SensorDevice" />
+          <AssociationSet Name="FK_LogicalSensorBinding_SensorDevice" Association="KalitteSensorServerModel.FK_LogicalSensorBinding_SensorDevice">
+            <End Role="SensorDevice" EntitySet="SensorDevice" />
+            <End Role="LogicalSensorBinding" EntitySet="LogicalSensorBinding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SensorDevice_SensorProvider" Association="KalitteSensorServerModel.FK_SensorDevice_SensorProvider">
+            <End Role="SensorProvider" EntitySet="SensorProvider" />
+            <End Role="SensorDevice" EntitySet="SensorDevice" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SensorProvider">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeQ" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SensorDevice" Relationship="KalitteSensorServerModel.FK_SensorDevice_SensorProvider" FromRole="SensorProvider" ToRole="SensorDevice" />
+        </EntityType>
+        <EntityType Name="Dispatcher">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeQ" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventProcessorDispatcherBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_Dispatcher" FromRole="Dispatcher" ToRole="EventProcessorDispatcherBinding" />
+        </EntityType>
+        <EntityType Name="EventModule">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeQ" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventProcessorModuleBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventModule" FromRole="EventModule" ToRole="EventProcessorModuleBinding" />
+        </EntityType>
+        <EntityType Name="EventProcessor">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventProcessorDispatcherBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_EventProcessor" FromRole="EventProcessor" ToRole="EventProcessorDispatcherBinding" />
+          <NavigationProperty Name="EventProcessorLogicalSensorBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_EventProcessor" FromRole="EventProcessor" ToRole="EventProcessorLogicalSensorBinding" />
+          <NavigationProperty Name="EventProcessorModuleBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventProcessor" FromRole="EventProcessor" ToRole="EventProcessorModuleBinding" />
+        </EntityType>
+        <EntityType Name="EventProcessorDispatcherBinding">
+          <Key>
+            <PropertyRef Name="EventProcessorID" />
+            <PropertyRef Name="DispatcherID" />
+          </Key>
+          <Property Type="String" Name="EventProcessorID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DispatcherID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dispatcher" Relationship="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_Dispatcher" FromRole="EventProcessorDispatcherBinding" ToRole="Dispatcher" />
+          <NavigationProperty Name="EventProcessor" Relationship="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_EventProcessor" FromRole="EventProcessorDispatcherBinding" ToRole="EventProcessor" />
+        </EntityType>
+        <EntityType Name="EventProcessorLogicalSensorBinding">
+          <Key>
+            <PropertyRef Name="EventProcessorID" />
+            <PropertyRef Name="LogicalSensorID" />
+          </Key>
+          <Property Type="String" Name="EventProcessorID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogicalSensorID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventProcessor" Relationship="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_EventProcessor" FromRole="EventProcessorLogicalSensorBinding" ToRole="EventProcessor" />
+          <NavigationProperty Name="LogicalSensor" Relationship="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_LogicalSensor" FromRole="EventProcessorLogicalSensorBinding" ToRole="LogicalSensor" />
+        </EntityType>
+        <EntityType Name="LogicalSensor">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventProcessorLogicalSensorBinding" Relationship="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_LogicalSensor" FromRole="LogicalSensor" ToRole="EventProcessorLogicalSensorBinding" />
+          <NavigationProperty Name="LogicalSensorBinding" Relationship="KalitteSensorServerModel.FK_LogicalSensorBinding_LogicalSensor" FromRole="LogicalSensor" ToRole="LogicalSensorBinding" />
+        </EntityType>
+        <EntityType Name="LogicalSensorBinding">
+          <Key>
+            <PropertyRef Name="LogicalSensorID" />
+            <PropertyRef Name="SensorDeviceID" />
+            <PropertyRef Name="SensorSource" />
+          </Key>
+          <Property Type="String" Name="LogicalSensorID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SensorDeviceID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SensorSource" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LogicalSensor" Relationship="KalitteSensorServerModel.FK_LogicalSensorBinding_LogicalSensor" FromRole="LogicalSensorBinding" ToRole="LogicalSensor" />
+          <NavigationProperty Name="SensorDevice" Relationship="KalitteSensorServerModel.FK_LogicalSensorBinding_SensorDevice" FromRole="LogicalSensorBinding" ToRole="SensorDevice" />
+        </EntityType>
+        <Association Name="FK_EventProcessorDispatcherBinding_Dispatcher">
+          <End Type="KalitteSensorServerModel.Dispatcher" Role="Dispatcher" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorDispatcherBinding" Role="EventProcessorDispatcherBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dispatcher">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorDispatcherBinding">
+              <PropertyRef Name="DispatcherID" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_EventProcessorDispatcherBinding_EventProcessor">
+          <End Type="KalitteSensorServerModel.EventProcessor" Role="EventProcessor" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorDispatcherBinding" Role="EventProcessorDispatcherBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorDispatcherBinding">
+              <PropertyRef Name="EventProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_EventProcessorLogicalSensorBinding_EventProcessor">
+          <End Type="KalitteSensorServerModel.EventProcessor" Role="EventProcessor" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorLogicalSensorBinding" Role="EventProcessorLogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorLogicalSensorBinding">
+              <PropertyRef Name="EventProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_EventProcessorLogicalSensorBinding_LogicalSensor">
+          <End Type="KalitteSensorServerModel.LogicalSensor" Role="LogicalSensor" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorLogicalSensorBinding" Role="EventProcessorLogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogicalSensor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorLogicalSensorBinding">
+              <PropertyRef Name="LogicalSensorID" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_LogicalSensorBinding_LogicalSensor">
+          <End Type="KalitteSensorServerModel.LogicalSensor" Role="LogicalSensor" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.LogicalSensorBinding" Role="LogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LogicalSensor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="LogicalSensorBinding">
+              <PropertyRef Name="LogicalSensorID" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <EntityType Name="EventProcessorModuleBinding">
+          <Key>
+            <PropertyRef Name="ProcessorID" />
+            <PropertyRef Name="ModuleID" />
+            <PropertyRef Name="ExecOrder" />
+          </Key>
+          <Property Type="String" Name="ProcessorID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ModuleID" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ExecOrder" Nullable="false" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EventModule" Relationship="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventModule" FromRole="EventProcessorModuleBinding" ToRole="EventModule" />
+          <NavigationProperty Name="EventProcessor" Relationship="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventProcessor" FromRole="EventProcessorModuleBinding" ToRole="EventProcessor" />
+        </EntityType>
+        <Association Name="FK_EventProcessorModuleBinding_EventModule">
+          <End Type="KalitteSensorServerModel.EventModule" Role="EventModule" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorModuleBinding" Role="EventProcessorModuleBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventModule">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorModuleBinding">
+              <PropertyRef Name="ModuleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EventProcessorModuleBinding_EventProcessor">
+          <End Type="KalitteSensorServerModel.EventProcessor" Role="EventProcessor" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.EventProcessorModuleBinding" Role="EventProcessorModuleBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventProcessor">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="EventProcessorModuleBinding">
+              <PropertyRef Name="ProcessorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SensorDevice">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SensorId" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Definition" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LogicalSensorBinding" Relationship="KalitteSensorServerModel.FK_LogicalSensorBinding_SensorDevice" FromRole="SensorDevice" ToRole="LogicalSensorBinding" />
+          <NavigationProperty Name="SensorProvider" Relationship="KalitteSensorServerModel.FK_SensorDevice_SensorProvider" FromRole="SensorDevice" ToRole="SensorProvider" />
+        </EntityType>
+        <Association Name="FK_LogicalSensorBinding_SensorDevice">
+          <End Type="KalitteSensorServerModel.SensorDevice" Role="SensorDevice" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.LogicalSensorBinding" Role="LogicalSensorBinding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SensorDevice">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="LogicalSensorBinding">
+              <PropertyRef Name="SensorDeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SensorDevice_SensorProvider">
+          <End Type="KalitteSensorServerModel.SensorProvider" Role="SensorProvider" Multiplicity="1" />
+          <End Type="KalitteSensorServerModel.SensorDevice" Role="SensorDevice" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KalitteSensorServerModelStoreContainer" CdmEntityContainer="KalitteSensorServerEntities">
+          <EntitySetMapping Name="SensorProvider">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.SensorProvider">
+              <MappingFragment StoreEntitySet="SensorProvider">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="TypeQ" ColumnName="TypeQ" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dispatcher">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.Dispatcher">
+              <MappingFragment StoreEntitySet="Dispatcher">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="TypeQ" ColumnName="TypeQ" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventModule">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.EventModule">
+              <MappingFragment StoreEntitySet="EventModule">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="TypeQ" ColumnName="TypeQ" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventProcessor">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.EventProcessor">
+              <MappingFragment StoreEntitySet="EventProcessor">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventProcessorDispatcherBinding">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.EventProcessorDispatcherBinding">
+              <MappingFragment StoreEntitySet="EventProcessorDispatcherBinding">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="DispatcherID" ColumnName="DispatcherID" />
+                <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventProcessorLogicalSensorBinding">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.EventProcessorLogicalSensorBinding">
+              <MappingFragment StoreEntitySet="EventProcessorLogicalSensorBinding">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="LogicalSensorID" ColumnName="LogicalSensorID" />
+                <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogicalSensor">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.LogicalSensor">
+              <MappingFragment StoreEntitySet="LogicalSensor">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogicalSensorBinding">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.LogicalSensorBinding">
+              <MappingFragment StoreEntitySet="LogicalSensorBinding">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="SensorSource" ColumnName="SensorSource" />
+                <ScalarProperty Name="SensorDeviceID" ColumnName="SensorDeviceID" />
+                <ScalarProperty Name="LogicalSensorID" ColumnName="LogicalSensorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_EventProcessorDispatcherBinding_Dispatcher" TypeName="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_Dispatcher" StoreEntitySet="EventProcessorDispatcherBinding">
+            <EndProperty Name="EventProcessorDispatcherBinding">
+              <ScalarProperty Name="DispatcherID" ColumnName="DispatcherID" />
+              <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+            </EndProperty>
+            <EndProperty Name="Dispatcher">
+              <ScalarProperty Name="Name" ColumnName="DispatcherID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_EventProcessorDispatcherBinding_EventProcessor" TypeName="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_EventProcessor" StoreEntitySet="EventProcessorDispatcherBinding">
+            <EndProperty Name="EventProcessorDispatcherBinding">
+              <ScalarProperty Name="DispatcherID" ColumnName="DispatcherID" />
+              <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+            </EndProperty>
+            <EndProperty Name="EventProcessor">
+              <ScalarProperty Name="Name" ColumnName="EventProcessorID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_EventProcessorLogicalSensorBinding_EventProcessor" TypeName="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_EventProcessor" StoreEntitySet="EventProcessorLogicalSensorBinding">
+            <EndProperty Name="EventProcessorLogicalSensorBinding">
+              <ScalarProperty Name="LogicalSensorID" ColumnName="LogicalSensorID" />
+              <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+            </EndProperty>
+            <EndProperty Name="EventProcessor">
+              <ScalarProperty Name="Name" ColumnName="EventProcessorID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_EventProcessorLogicalSensorBinding_LogicalSensor" TypeName="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_LogicalSensor" StoreEntitySet="EventProcessorLogicalSensorBinding">
+            <EndProperty Name="EventProcessorLogicalSensorBinding">
+              <ScalarProperty Name="LogicalSensorID" ColumnName="LogicalSensorID" />
+              <ScalarProperty Name="EventProcessorID" ColumnName="EventProcessorID" />
+            </EndProperty>
+            <EndProperty Name="LogicalSensor">
+              <ScalarProperty Name="Name" ColumnName="LogicalSensorID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_LogicalSensorBinding_LogicalSensor" TypeName="KalitteSensorServerModel.FK_LogicalSensorBinding_LogicalSensor" StoreEntitySet="LogicalSensorBinding">
+            <EndProperty Name="LogicalSensorBinding">
+              <ScalarProperty Name="SensorSource" ColumnName="SensorSource" />
+              <ScalarProperty Name="SensorDeviceID" ColumnName="SensorDeviceID" />
+              <ScalarProperty Name="LogicalSensorID" ColumnName="LogicalSensorID" />
+            </EndProperty>
+            <EndProperty Name="LogicalSensor">
+              <ScalarProperty Name="Name" ColumnName="LogicalSensorID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="EventProcessorModuleBinding">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.EventProcessorModuleBinding">
+              <MappingFragment StoreEntitySet="EventProcessorModuleBinding">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="ExecOrder" ColumnName="ExecOrder" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="ProcessorID" ColumnName="ProcessorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SensorDevice">
+            <EntityTypeMapping TypeName="KalitteSensorServerModel.SensorDevice">
+              <MappingFragment StoreEntitySet="SensorDevice">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+                <ScalarProperty Name="SensorId" ColumnName="SensorId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_SensorDevice_SensorProvider" TypeName="KalitteSensorServerModel.FK_SensorDevice_SensorProvider" StoreEntitySet="SensorDevice">
+            <EndProperty Name="SensorDevice">
+              <ScalarProperty Name="Name" ColumnName="Name" />
+            </EndProperty>
+            <EndProperty Name="SensorProvider">
+              <ScalarProperty Name="Name" ColumnName="ProviderID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="KalitteSensorServerEntities">
+        <EntityTypeShape EntityType="KalitteSensorServerModel.SensorProvider" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.Dispatcher" Width="1.5" PointX="0.75" PointY="12.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.EventModule" Width="1.5" PointX="0.75" PointY="4.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.EventProcessor" Width="1.5" PointX="0.75" PointY="8.375" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.EventProcessorDispatcherBinding" Width="1.5" PointX="3" PointY="8.375" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.EventProcessorLogicalSensorBinding" Width="1.5" PointX="6" PointY="8.375" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.LogicalSensor" Width="1.5" PointX="3.75" PointY="12.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="KalitteSensorServerModel.LogicalSensorBinding" Width="1.5" PointX="6" PointY="4.5" Height="2.5571907552083353" />
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_Dispatcher">
+          <ConnectorPoint PointX="2.25" PointY="12.501152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="12.126152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="9.85305782682292" />
+          <ConnectorPoint PointX="3" PointY="9.85305782682292" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorDispatcherBinding_EventProcessor">
+          <ConnectorPoint PointX="2.25" PointY="9.05152891341146" />
+          <ConnectorPoint PointX="3" PointY="9.05152891341146" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_EventProcessor">
+          <ConnectorPoint PointX="2.2499999999999978" PointY="10.739889322916666" />
+          <ConnectorPoint PointX="2.625" PointY="11.114889322916667" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="11.114889322916667" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="11.114889322916667" />
+          <ConnectorPoint PointX="5.6261528461538468" PointY="11.114889322916667" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="10.739889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorLogicalSensorBinding_LogicalSensor">
+          <ConnectorPoint PointX="5.25" PointY="13.5862939453125" />
+          <ConnectorPoint PointX="6.7818289230769224" PointY="13.5862939453125" />
+          <ConnectorPoint PointX="6.7818289230769224" PointY="10.739889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_LogicalSensorBinding_LogicalSensor">
+          <ConnectorPoint PointX="4.90625" PointY="12.5" />
+          <ConnectorPoint PointX="4.90625" PointY="5.7785953776041659" />
+          <ConnectorPoint PointX="6" PointY="5.7785953776041659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="KalitteSensorServerModel.EventProcessorModuleBinding" Width="1.5" PointX="10.125" PointY="2" Height="2.5571907552083317" />
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventModule" >
+          <ConnectorPoint PointX="1.5" PointY="4.5" />
+          <ConnectorPoint PointX="1.5" PointY="3.2785953776041659" />
+          <ConnectorPoint PointX="4.244791666666667" PointY="3.2785953776041654" />
+          <ConnectorPoint PointX="4.411458333333333" PointY="3.2785953776041659" />
+          <ConnectorPoint PointX="10.125" PointY="3.2785953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_EventProcessorModuleBinding_EventProcessor" >
+          <ConnectorPoint PointX="2.25" PointY="8.3761528461538468" />
+          <ConnectorPoint PointX="2.6261528461538468" PointY="8" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="7.9999999999999991" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="8" />
+          <ConnectorPoint PointX="10.875" PointY="8" />
+          <ConnectorPoint PointX="10.875" PointY="4.5571907552083317" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="KalitteSensorServerModel.SensorDevice" Width="1.5" PointX="3.75" PointY="0.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="KalitteSensorServerModel.FK_LogicalSensorBinding_SensorDevice" >
+          <ConnectorPoint PointX="4.328125" PointY="2.9898893229166674" />
+          <ConnectorPoint PointX="4.328125" PointY="5.1080451888020821" />
+          <ConnectorPoint PointX="6" PointY="5.1080451888020821" />
+        </AssociationConnector>
+        <AssociationConnector Association="KalitteSensorServerModel.FK_SensorDevice_SensorProvider" >
+          <ConnectorPoint PointX="2.25" PointY="1.9324446614583337" />
+          <ConnectorPoint PointX="3.75" PointY="1.9324446614583337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

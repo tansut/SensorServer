@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultMaster.master.cs"
+    Inherits="Kalitte.Sensors.Web.UI.MasterPages.DefaultMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Kalitte Sensor Server Management Console</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Resource/Css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function doOnLoad() {
+            if (typeof (attachWidgetHandlers) != 'undefined') { attachWidgetHandlers() };
+        }
+
+        function doUnLoad() {
+            if (typeof (ClearAllAutoRefresh) != 'undefined') {
+                ClearAllAutoRefresh();
+            };
+        }
+    </script>
+</head>
+<body onload="doOnLoad();" onunload="doUnLoad();">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <kalitte:ScriptManager ID="ksm" runat="server">
+    </kalitte:ScriptManager>
+    <asp:ContentPlaceHolder ID="pageContentHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

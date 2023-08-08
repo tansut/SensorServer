@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB3CBD63-D524-48F6-8080-60ED676661C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Rfid.VirtualProvider</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Rfid.VirtualProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Commands\CommandHandler.cs" />
+    <Compile Include="Commands\CommandProcessor.cs" />
+    <Compile Include="Commands\ApplyPropertyListCommandHandler.cs" />
+    <Compile Include="Commands\GetActivePropertyListCommandHandler.cs" />
+    <Compile Include="Commands\QueryTagsCommandHandler.cs" />
+    <Compile Include="Communication\DeviceState.cs" />
+    <Compile Include="Communication\VirtualDevice.cs" />
+    <Compile Include="Communication\VirtualDeviceProxy.cs" />
+    <Compile Include="Communication\VirtualProvider.cs" />
+    <Compile Include="Context\VirtualProviderContext.cs" />
+    <Compile Include="Events\MessageEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tags\C1G2Tag.cs" />
+    <Compile Include="Tags\VirtualTag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensors.Rfid\Kalitte.Sensors.Rfid.csproj">
+      <Project>{A8E58203-BF18-4C69-B2A8-D3F554B2B24D}</Project>
+      <Name>Kalitte.Sensors.Rfid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) ..\..\..\Kalitte.Sensors.Server\Bin\$(ConfigurationName)\ /y
+copy $(TargetPath) ..\..\..\Kalitte.Sensors.ServerWcf\Bin\ /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

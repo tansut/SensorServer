@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4FF33DC-0CB0-4BA2-9E74-A3789EDA886A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Web.UI</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Web.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Solution Items\sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\Third.Party\Ajax.Toolkit\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net, Version=1.1.0.18824, Culture=neutral, PublicKeyToken=2e12ce3d0176cd87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities, Version=1.1.0.18822, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Kalitte.Dashboard.Framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=006de035aafd395a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Kalitte.Dashboard.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\DefaultTheme\defaultStyles.css" />
+    <Content Include="Controls\CommandEditors\Rfid\LockTagCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\QueryTagsCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\ReadTagCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\ReadTagDataCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\TagDataSelect.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\TagMemorySelect.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\WriteIdCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\WriteTagCommandEditor.ascx" />
+    <Content Include="Controls\CommandEditors\Rfid\WriteTagDataCommandEditor.ascx" />
+    <Content Include="Controls\PropertyEditors\EventModuleMetadata\TagStatusModule\TagStatusCustomDataEditor.ascx" />
+    <Content Include="Controls\Site\ChangeUserPasswordControl.ascx" />
+    <Content Include="Controls\Site\ItemWatchControl.ascx" />
+    <Content Include="Controls\Site\LastEventsViewer.ascx" />
+    <Content Include="Controls\Site\LoginWindowControl.ascx" />
+    <Content Include="Controls\Site\LogViewer.ascx" />
+    <Content Include="Controls\Site\MonitoringDataEditor.ascx" />
+    <Content Include="Controls\Site\ServerWatchParameters.ascx" />
+    <Content Include="Controls\Site\ServerWatchVisualizer.ascx" />
+    <Content Include="Controls\Site\WatchVisualizerWindow.ascx" />
+    <Content Include="Controls\Widgets\DashboardEditor\Editor.ascx" />
+    <Content Include="Controls\Widgets\DashboardEditor\PanelPropertyEditor.ascx" />
+    <Content Include="Controls\Widgets\HtmlWidget\Editor.ascx" />
+    <Content Include="Controls\Widgets\HtmlWidget\HtmlWidget.ascx" />
+    <Content Include="Controls\Widgets\ServerAnalyse\Editor.ascx" />
+    <Content Include="Controls\Widgets\ServerAnalyse\View.ascx" />
+    <Content Include="default.aspx" />
+    <Content Include="Pages\default.aspx" />
+    <Content Include="Pages\Dispatchers\Editor.ascx" />
+    <Content Include="Pages\Dispatchers\List.ascx" />
+    <Content Include="Pages\Dispatchers\Management.aspx" />
+    <Content Include="Pages\Dispatchers\ProcessorEditor.ascx" />
+    <Content Include="Pages\Dynamic\EditDashboards.aspx" />
+    <Content Include="Pages\Dynamic\ViewDashboard.aspx" />
+    <Content Include="Pages\Dynamic\WidgetEditor.aspx" />
+    <Content Include="Pages\Dynamic\WidgetMaximize.aspx" />
+    <Content Include="Pages\EventModules\Editor.ascx" />
+    <Content Include="Pages\EventModules\List.ascx" />
+    <Content Include="Pages\EventModules\Management.aspx" />
+    <Content Include="Pages\LogicalSensors\Editor.ascx" />
+    <Content Include="Pages\LogicalSensors\Management.aspx" />
+    <Content Include="Pages\LogicalSensors\List.ascx" />
+    <Content Include="Pages\Processors\ModuleState.ascx" />
+    <Content Include="Pages\Processors\LogicalSensorEditor.ascx" />
+    <Content Include="Pages\Processors\ModuleEditor.ascx" />
+    <Content Include="Pages\Processors\Editor.ascx" />
+    <Content Include="Pages\Processors\List.ascx" />
+    <Content Include="Pages\Processors\Management.aspx" />
+    <Content Include="Pages\SensorProviders\Editor.ascx" />
+    <Content Include="Pages\SensorProviders\Management.aspx" />
+    <Content Include="Pages\SensorProviders\List.ascx" />
+    <Content Include="Pages\Sensors\CommandManager.aspx" />
+    <Content Include="Pages\Sensors\CommandWindow.ascx" />
+    <Content Include="Pages\Sensors\Editor.ascx" />
+    <Content Include="Pages\Sensors\Management.aspx" />
+    <Content Include="Pages\Sensors\List.ascx" />
+    <Content Include="Pages\Server\LogManagement.aspx" />
+    <Content Include="Pages\Server\WatchManagement\default.aspx" />
+    <Content Include="Pages\Server\WatchManagement\WatchVisualizerPage.aspx" />
+    <Content Include="Pages\Shared\LoadCustomPropertyEditor.aspx" />
+    <Content Include="Pages\Shared\login.aspx" />
+    <Content Include="Pages\Shared\UnhandledError.aspx" />
+    <Content Include="Resource\Css\styles.css" />
+    <Content Include="Resource\Image\loading.gif" />
+    <Content Include="Resource\Image\Rfid\TagMemoryC1G2.gif" />
+    <Content Include="Resource\Script\kalitte.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App_GlobalResources\AppResource.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\AppResource.TR-tr.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.TR-tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\ChangeUserPasswordControl.ascx.cs">
+      <DependentUpon>ChangeUserPasswordControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\ChangeUserPasswordControl.ascx.designer.cs">
+      <DependentUpon>ChangeUserPasswordControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\ItemWatchControl.ascx.cs">
+      <DependentUpon>ItemWatchControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\ItemWatchControl.ascx.designer.cs">
+      <DependentUpon>ItemWatchControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\LastEventsViewer.ascx.cs">
+      <DependentUpon>LastEventsViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\LastEventsViewer.ascx.designer.cs">
+      <DependentUpon>LastEventsViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\LoginWindowControl.ascx.cs">
+      <DependentUpon>LoginWindowControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\LoginWindowControl.ascx.designer.cs">
+      <DependentUpon>LoginWindowControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\LogViewer.ascx.cs">
+      <DependentUpon>LogViewer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\LogViewer.ascx.designer.cs">
+      <DependentUpon>LogViewer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\MonitoringDataEditor.ascx.cs">
+      <DependentUpon>MonitoringDataEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\MonitoringDataEditor.ascx.designer.cs">
+      <DependentUpon>MonitoringDataEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\ServerWatchParameters.ascx.cs">
+      <DependentUpon>ServerWatchParameters.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\ServerWatchParameters.ascx.designer.cs">
+      <DependentUpon>ServerWatchParameters.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\ServerWatchVisualizer.ascx.cs">
+      <DependentUpon>ServerWatchVisualizer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\ServerWatchVisualizer.ascx.designer.cs">
+      <DependentUpon>ServerWatchVisualizer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Site\WatchVisualizerWindow.ascx.cs">
+      <DependentUpon>WatchVisualizerWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Site\WatchVisualizerWindow.ascx.designer.cs">
+      <DependentUpon>WatchVisualizerWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\DashboardEditor\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\DashboardEditor\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\DashboardEditor\PanelPropertyEditor.ascx.cs">
+      <DependentUpon>PanelPropertyEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\DashboardEditor\PanelPropertyEditor.ascx.designer.cs">
+      <DependentUpon>PanelPropertyEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\HtmlWidget\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\HtmlWidget\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\HtmlWidget\HtmlWidget.ascx.cs">
+      <DependentUpon>HtmlWidget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\HtmlWidget\HtmlWidget.ascx.designer.cs">
+      <DependentUpon>HtmlWidget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\ServerAnalyse\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\ServerAnalyse\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Widgets\ServerAnalyse\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Widgets\ServerAnalyse\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\DefaultMaster.Master.cs">
+      <DependentUpon>DefaultMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\DefaultMaster.Master.designer.cs">
+      <DependentUpon>DefaultMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\ProcessorEditor.ascx.cs">
+      <DependentUpon>ProcessorEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dispatchers\ProcessorEditor.ascx.designer.cs">
+      <DependentUpon>ProcessorEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dynamic\EditDashboards.aspx.cs">
+      <DependentUpon>EditDashboards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dynamic\EditDashboards.aspx.designer.cs">
+      <DependentUpon>EditDashboards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dynamic\ViewDashboard.aspx.cs">
+      <DependentUpon>ViewDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dynamic\ViewDashboard.aspx.designer.cs">
+      <DependentUpon>ViewDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dynamic\WidgetEditor.aspx.cs">
+      <DependentUpon>WidgetEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dynamic\WidgetEditor.aspx.designer.cs">
+      <DependentUpon>WidgetEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Dynamic\WidgetMaximize.aspx.cs">
+      <DependentUpon>WidgetMaximize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Dynamic\WidgetMaximize.aspx.designer.cs">
+      <DependentUpon>WidgetMaximize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventModules\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventModules\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventModules\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventModules\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventModules\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EventModules\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LogicalSensors\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\ModuleState.ascx.cs">
+      <DependentUpon>ModuleState.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\ModuleState.ascx.designer.cs">
+      <DependentUpon>ModuleState.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\LogicalSensorEditor.ascx.cs">
+      <DependentUpon>LogicalSensorEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\LogicalSensorEditor.ascx.designer.cs">
+      <DependentUpon>LogicalSensorEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\ModuleEditor.ascx.cs">
+      <DependentUpon>ModuleEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\ModuleEditor.ascx.designer.cs">
+      <DependentUpon>ModuleEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Processors\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Processors\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SensorProviders\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sensors\CommandManager.aspx.cs">
+      <DependentUpon>CommandManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sensors\CommandManager.aspx.designer.cs">
+      <DependentUpon>CommandManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sensors\CommandWindow.ascx.cs">
+      <DependentUpon>CommandWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sensors\CommandWindow.ascx.designer.cs">
+      <DependentUpon>CommandWindow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sensors\Editor.ascx.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sensors\Editor.ascx.designer.cs">
+      <DependentUpon>Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sensors\Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sensors\Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sensors\List.ascx.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sensors\List.ascx.designer.cs">
+      <DependentUpon>List.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Server\LogManagement.aspx.cs">
+      <DependentUpon>LogManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Server\LogManagement.aspx.designer.cs">
+      <DependentUpon>LogManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Server\WatchManagement\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Server\WatchManagement\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Server\WatchManagement\WatchVisualizerPage.aspx.cs">
+      <DependentUpon>WatchVisualizerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Server\WatchManagement\WatchVisualizerPage.aspx.designer.cs">
+      <DependentUpon>WatchVisualizerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\LoadCustomPropertyEditor.aspx.cs">
+      <DependentUpon>LoadCustomPropertyEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\LoadCustomPropertyEditor.aspx.designer.cs">
+      <DependentUpon>LoadCustomPropertyEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\UnhandledError.aspx.cs">
+      <DependentUpon>UnhandledError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\UnhandledError.aspx.designer.cs">
+      <DependentUpon>UnhandledError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensor.Client\Kalitte.Sensors.Client.csproj">
+      <Project>{7D46B223-72A6-4204-9AB3-B77578548187}</Project>
+      <Name>Kalitte.Sensors.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors.Web\Kalitte.Sensors.Web.csproj">
+      <Project>{06B656D0-E7C8-4DB3-9407-41630DB3D67F}</Project>
+      <Name>Kalitte.Sensors.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="MasterPages\DefaultMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Kalitte.Dashboard.Framework.DashboardSurface.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Widgets\DashboardEditor\App_LocalResources\Editor.ascx.resx" />
+    <Content Include="Controls\Widgets\DashboardEditor\App_LocalResources\Editor.ascx.TR-tr.resx" />
+    <Content Include="Controls\Widgets\DashboardEditor\App_LocalResources\PanelPropertyEditor.ascx.resx" />
+    <Content Include="Controls\Widgets\DashboardEditor\App_LocalResources\PanelPropertyEditor.ascx.TR-tr.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\AppResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AppResource.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\AppResource.TR-tr.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>AppResource.TR-tr.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8888</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Kalitte.Sensors.Web.UI</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

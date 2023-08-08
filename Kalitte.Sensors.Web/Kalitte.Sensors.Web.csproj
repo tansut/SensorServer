@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06B656D0-E7C8-4DB3-9407-41630DB3D67F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kalitte.Sensors.Web</RootNamespace>
+    <AssemblyName>Kalitte.Sensors.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Nonshipping>true</Nonshipping>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>sensors.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Kalitte.Dashboard.Framework">
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Kalitte.Dashboard.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Third.Party\Dynamic.Dashboards\DynamicDashboards\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Solution Items\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Business\AuthenticationBusiness.cs" />
+    <Compile Include="Business\BusinessBase.cs" />
+    <Compile Include="Business\DispatcherBusiness.cs" />
+    <Compile Include="Business\EntityBusiness.cs" />
+    <Compile Include="Business\EventModuleBusiness.cs" />
+    <Compile Include="Business\LogBusiness.cs" />
+    <Compile Include="Business\LogicalSensorBusiness.cs" />
+    <Compile Include="Business\Logindata.cs" />
+    <Compile Include="Business\ManagementBusiness.cs" />
+    <Compile Include="Business\ProcessorBusiness.cs" />
+    <Compile Include="Business\SensorBusiness.cs" />
+    <Compile Include="Business\SensorProviderBusiness.cs" />
+    <Compile Include="Business\ServerAnalysisBusiness.cs" />
+    <Compile Include="Controls\PropertyProfileEditor.cs" />
+    <Compile Include="Controls\PropertyProfileGrid.cs" />
+    <Compile Include="Controls\PropertyProfileMenu.cs" />
+    <Compile Include="Controls\SensorPropertyProfileEditor.cs" />
+    <Compile Include="Controls\SetPropertyProfileEventArgs.cs" />
+    <Compile Include="Controls\StartStopGridCommand.cs" />
+    <Compile Include="Controls\TTComboBox.cs" />
+    <Compile Include="Controls\TTCompositeField.cs" />
+    <Compile Include="Controls\TTContainer.cs" />
+    <Compile Include="Controls\TTDateColumn.cs" />
+    <Compile Include="Controls\TTDateField.cs" />
+    <Compile Include="Controls\TTEmailbox.cs" />
+    <Compile Include="Controls\TTEnumCombo.cs" />
+    <Compile Include="Controls\TTEnumStore.cs" />
+    <Compile Include="Controls\TTExceptionViewer.cs" />
+    <Compile Include="Controls\TTFieldSet.cs" />
+    <Compile Include="Controls\TTFileUploadField.cs" />
+    <Compile Include="Controls\TTFitLayout.cs" />
+    <Compile Include="Controls\TTIbanField.cs" />
+    <Compile Include="Controls\TTNumberField.cs" />
+    <Compile Include="Controls\TTPanel.cs" />
+    <Compile Include="Controls\TTPhoneBox.cs" />
+    <Compile Include="Controls\TTPropertyGridParameter.cs" />
+    <Compile Include="Controls\TTRowLayout.cs" />
+    <Compile Include="Controls\TTSplitButton.cs" />
+    <Compile Include="Controls\TTTabPanel.cs" />
+    <Compile Include="Controls\TTTextArea.cs" />
+    <Compile Include="Controls\TTToolbar.cs" />
+    <Compile Include="Core\CommandInfo.cs" />
+    <Compile Include="Controls\TTButton.cs" />
+    <Compile Include="Controls\TTButtonGroup.cs" />
+    <Compile Include="Controls\TTCheckBox.cs" />
+    <Compile Include="Controls\TTCmdButon.cs" />
+    <Compile Include="Controls\TTColumn.cs" />
+    <Compile Include="Controls\TTCommandColumn.cs" />
+    <Compile Include="Controls\TTFormPanel.cs" />
+    <Compile Include="Controls\TTGrid.cs" />
+    <Compile Include="Controls\TTGridCommand.cs" />
+    <Compile Include="Controls\TTMenu.cs" />
+    <Compile Include="Controls\TTMenuItem.cs" />
+    <Compile Include="Controls\TTPagingToolbar.cs" />
+    <Compile Include="Controls\TTStore.cs" />
+    <Compile Include="Controls\TTTextField.cs" />
+    <Compile Include="Controls\TTWindow.cs" />
+    <Compile Include="Core\ICommandHandler.cs" />
+    <Compile Include="Core\ICommandSource.cs" />
+    <Compile Include="Modules\AppModule.cs" />
+    <Compile Include="Providers\SensorSiteMapProvider.cs" />
+    <Compile Include="Security\BusinessException.cs" />
+    <Compile Include="Security\ExceptionManager.cs" />
+    <Compile Include="Security\KnownCommand.cs" />
+    <Compile Include="Security\TechnicalException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\BaseDashboardPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BaseEditor.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ControlCommandHandler.cs" />
+    <Compile Include="UI\ViewPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BaseViewUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\CommandHandlerAttribute.cs" />
+    <Compile Include="UI\EditorViewControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ListerViewControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ViewControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\ConvertHelper.cs" />
+    <Compile Include="Utility\WebHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalitte.Sensor.Client\Kalitte.Sensors.Client.csproj">
+      <Project>{7D46B223-72A6-4204-9AB3-B77578548187}</Project>
+      <Name>Kalitte.Sensors.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kalitte.Sensors\Kalitte.Sensors.csproj">
+      <Project>{4DD4CFFB-8F24-4CB2-A91D-14CAE1B3C325}</Project>
+      <Name>Kalitte.Sensors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sensors.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
